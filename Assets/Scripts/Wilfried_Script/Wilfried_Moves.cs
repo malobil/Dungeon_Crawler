@@ -47,6 +47,16 @@ public class Wilfried_Moves : MonoBehaviour {
 		{
 			transform.position = Vector3.MoveTowards(transform.position, rightWayPoint, movementSpeed) ;
 		}
+
+		if(Input.GetKeyDown("a"))
+		{
+			transform.Rotate(Vector3.up, -90) ;
+		}
+
+		if(Input.GetKeyDown("e"))
+		{
+			transform.Rotate(Vector3.up, 90) ;
+		}
 	}
 
 	void FixedUpdate()
@@ -63,7 +73,7 @@ public class Wilfried_Moves : MonoBehaviour {
 		RaycastHit rightHit ;
 
 		//Shot a ray in 4 direction to check if got a wayPoint //
-		if(Physics.Raycast(transform.position,Vector3.forward,out frontHit,raycastRange,layer))
+		if(Physics.Raycast(transform.position,transform.forward,out frontHit,raycastRange,layer))
 		{
 			Debug.Log("Hit") ;
 			frontWayPoint = frontHit.transform.position ;
@@ -75,7 +85,7 @@ public class Wilfried_Moves : MonoBehaviour {
 			haveFrontPoint = false ;
 		}
 
-		if(Physics.Raycast(transform.position,Vector3.back,out backHit,raycastRange,layer))
+		if(Physics.Raycast(transform.position,-transform.forward,out backHit,raycastRange,layer))
 		{
 			Debug.Log("Hit") ;
 			backWayPoint = backHit.transform.position ;
@@ -87,7 +97,7 @@ public class Wilfried_Moves : MonoBehaviour {
 			haveBackPoint = false ;
 		}
 
-		if(Physics.Raycast(transform.position,Vector3.left,out leftHit,raycastRange,layer))
+		if(Physics.Raycast(transform.position,-transform.right,out leftHit,raycastRange,layer))
 		{
 			Debug.Log("Hit") ;
 			leftWayPoint = leftHit.transform.position ;
@@ -99,7 +109,7 @@ public class Wilfried_Moves : MonoBehaviour {
 			haveLeftPoint = false ;
 		}
 
-		if(Physics.Raycast(transform.position,Vector3.right,out rightHit,raycastRange,layer))
+		if(Physics.Raycast(transform.position,transform.right,out rightHit,raycastRange,layer))
 		{
 			Debug.Log("Hit") ;
 			rightWayPoint = rightHit.transform.position ;

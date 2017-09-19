@@ -717,7 +717,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1932246188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.00000037252897, z: -0, w: 1}
   m_LocalPosition: {x: -4.5, y: 0.408, z: -0.486}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
@@ -740,7 +740,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 256
-  movementSpeed: 5
+  movementSpeed: 1
 --- !u!1 &2055266184
 GameObject:
   m_ObjectHideFlags: 0
