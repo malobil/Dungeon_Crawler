@@ -9,11 +9,13 @@ void FixedUpdate ()
 	{
 		RaycastHit hit ;
 
-		if (Physics.Raycast(transform.position,transform.forward, out hit,4))
-		{
-		   gameObject.GetComponent<Animator>().SetTrigger("OpenDoor");
-		}
-		//if (other.gameObject.tag == "...")
-	}
+		if (Input.GetMouseButtonDown(0))
+        {
+          	Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+           	if (Physics.Raycast(raycast,out hit,4) && (hit.collider.tag == "Test Boutton"))
+			{
+		   		GetComponent<Animator>().SetTrigger("OpenDoor");
+			}
+        }
+    }
 }
-
