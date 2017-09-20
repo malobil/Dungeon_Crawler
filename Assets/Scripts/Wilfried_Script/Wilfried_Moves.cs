@@ -106,6 +106,10 @@ public class Wilfried_Moves : MonoBehaviour {
 				haveFrontPoint = true ;
 				//Debug.Log(frontWayPoint) ;
 			}
+			else
+			{
+				haveFrontPoint = false ;
+			}
 		}
 		else
 		{
@@ -142,6 +146,10 @@ public class Wilfried_Moves : MonoBehaviour {
 				haveLeftPoint = true ;
 				//Debug.Log(leftWayPoint) ;
 			}
+			else
+			{
+				haveLeftPoint = false ;
+			}
 		}
 		else
 		{
@@ -157,6 +165,10 @@ public class Wilfried_Moves : MonoBehaviour {
 				rightWayPoint = rightHit.transform.position ;
 				haveRightPoint = true ;
 				//Debug.Log(rightWayPoint) ;
+			}
+			else 
+			{
+				haveRightPoint = false ;
 			}
 		}
 		else
