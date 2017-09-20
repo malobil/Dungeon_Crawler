@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33192116131724436}
   - component: {fileID: 23226279752212252}
   - component: {fileID: 95344615246270294}
+  - component: {fileID: 65395697480753882}
   m_Layer: 0
   m_Name: "Pr\xE9fab_Mur (1)"
   m_TagString: Untagged
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 33361594410316858}
   - component: {fileID: 23350367537091678}
   - component: {fileID: 95799778278668986}
+  - component: {fileID: 65062419881011624}
   m_Layer: 0
   m_Name: "Pr\xE9fab_Couloir 1"
   m_TagString: Untagged
@@ -120,7 +122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084369126069492}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6.8993, y: -4.1053, z: 17.305}
+  m_LocalPosition: {x: 5.7436666, y: 15.930998, z: -0.9587927}
   m_LocalScale: {x: 1, y: 2.0264134, z: 1}
   m_Children:
   - {fileID: 4986839960242042}
@@ -325,6 +327,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578749587853952}
   m_Mesh: {fileID: 4300000, guid: 76ff8335b6900b641a07f6696fd100b2, type: 3}
+--- !u!65 &65062419881011624
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1084369126069492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.42254862, z: 3.000001}
+  m_Center: {x: 0, y: 0.04663675, z: 1.5000005}
+--- !u!65 &65395697480753882
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030421085050242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.42254862, z: 3.000001}
+  m_Center: {x: 0, y: 0.046636034, z: 1.5000005}
 --- !u!65 &65770664529428344
 BoxCollider:
   m_ObjectHideFlags: 1
