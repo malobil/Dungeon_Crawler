@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23475325834249630}
   - component: {fileID: 95153893209584908}
   m_Layer: 0
-  m_Name: "Pr\xE9fab_Sol 1"
+  m_Name: "Pr\xE9fab_Sol_Waypoint"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
