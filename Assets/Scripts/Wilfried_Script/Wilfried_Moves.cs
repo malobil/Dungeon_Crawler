@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI ;
 
 public class Wilfried_Moves : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class Wilfried_Moves : MonoBehaviour {
 	public float rotationSpeed ; // player turn speed
 	public float maxHP = 100 ;
 	public float currentHP ;
+	public Image hpBar ;
 
 	private Vector3 frontWayPoint ; // the front direction point
 	private Vector3 backWayPoint ; // the back direction point
@@ -46,6 +48,7 @@ public class Wilfried_Moves : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+	
 		if(Input.GetKeyDown("z") && haveFrontPoint && canMove)
 		{
 			//isMoving = true ;
@@ -222,9 +225,32 @@ public class Wilfried_Moves : MonoBehaviour {
 		}
 	}
 
+	void AddMaxHp(float hpGain)
+	{
+		maxHP += hpGain ;
+	}
+
+	void RetireMaxHp(float hpLost)
+	{
+		maxHP -= hpLost ;
+		currentHP -= hpLost ;
+	}
+
+	void ChangeHealthBar()
+	{
+		hpBar.fillAmount = currentHP/maxHP ;
+	}
+
 	public void TakeInstantDamage(float damage)
 	{
 		currentHP -= damage ;
+
+		if(hpBar != null)
+		{
+			ChangeHealthBar() ;
+			Debug.Log("life") ;
+		}
+
 		CheckHP() ;
 	}
 
