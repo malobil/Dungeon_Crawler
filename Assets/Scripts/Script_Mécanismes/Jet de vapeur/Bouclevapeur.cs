@@ -8,6 +8,8 @@ public class Bouclevapeur : MonoBehaviour {
 	public float cooldownVapor;
 	private float cooldownActive;
 	private bool vaporActive;
+	public BoxCollider Damage;
+
 
 
 	// Use this for initialization
@@ -50,6 +52,12 @@ public class Bouclevapeur : MonoBehaviour {
 
 			vapor.Play();
 		} 
+
+	}
+	void OnTriggerEnter()
+	{
+
+
 
 	}
 
