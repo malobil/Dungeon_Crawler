@@ -23,6 +23,8 @@ public class Wilfried_Moves : MonoBehaviour {
 	private float currentRotation ;
 	private Quaternion qTo ;
 
+	private bool isMoving = false ;
+	private bool isTurning = false ;
 
 	// Use this for initialization
 	void Start () 
@@ -36,25 +38,25 @@ public class Wilfried_Moves : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown("z") && haveFrontPoint)
+		if(Input.GetKeyDown("z") && haveFrontPoint && !isTurning)
 		{
 			//isMoving = true ;
 			destination = frontWayPoint ;
 		}
 
-		if(Input.GetKeyDown("s") && haveBackPoint)
+		if(Input.GetKeyDown("s") && haveBackPoint && !isTurning)
 		{
 			//isMoving = true ;
 			destination = backWayPoint ;
 		}
 
-		if(Input.GetKeyDown("q") && haveLeftPoint)
+		if(Input.GetKeyDown("q") && haveLeftPoint && !isTurning)
 		{
 			//isMoving = true ;
 			destination = leftWayPoint ;
 		}
 
-		if(Input.GetKeyDown("d") && haveRightPoint)
+		if(Input.GetKeyDown("d") && haveRightPoint && !isTurning)
 		{
 			//isMoving = true ;
 			destination = rightWayPoint ;
@@ -169,13 +171,26 @@ public class Wilfried_Moves : MonoBehaviour {
 		if(destination != transform.position)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, destination, movementSpeed * Time.deltaTime) ;
+			isMoving = true ;
+		}
+		else
+		{
+			isMoving = false ;
 		}
 	}
 
 	//turn the camera left or right//
 	void TurnCamera()
 	{
-		transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, rotationSpeed * Time.deltaTime) ; // need check to not rotate 
+		if(qTo != transform.rotation)
+		{
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, rotationSpeed * Time.deltaTime) ; // need check to not rotate
+			isTurning = true ;
+		}
+		else if(qTo == transform.rotation) 
+		{
+			isTurning = false ;
+		}
 	}
 
 	public Vector3 ReturnFrontWayPoint()
