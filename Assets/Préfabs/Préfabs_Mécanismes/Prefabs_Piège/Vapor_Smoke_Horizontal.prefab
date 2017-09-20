@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4127959711108060}
   - component: {fileID: 198966309741286556}
   - component: {fileID: 199358378125674470}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Vapor_VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4135330652112276}
   - component: {fileID: 114416179789523758}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Vapor_Smoke_Horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,8 @@ GameObject:
   - component: {fileID: 4224788834065512}
   - component: {fileID: 33212955467035818}
   - component: {fileID: 23910427217285516}
-  m_Layer: 0
+  - component: {fileID: 65236359503229756}
+  m_Layer: 2
   m_Name: Vapor_Creator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1339820713120100}
   m_LocalRotation: {x: -0.50963515, y: 0.49017546, z: -0.49017558, w: 0.50963515}
-  m_LocalPosition: {x: -4.3821287, y: 0.7799146, z: 0.25966692}
+  m_LocalPosition: {x: -4.198, y: 0.937, z: 0.16}
   m_LocalScale: {x: 0.32320502, y: 0.32320485, z: 0.3232049}
   m_Children: []
   m_Father: {fileID: 4135330652112276}
@@ -96,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427757939600686}
   m_LocalRotation: {x: -0.5050539, y: 0.49489444, z: -0.50159484, w: 0.4984002}
-  m_LocalPosition: {x: -4.3291287, y: 0.8609146, z: 0.11366701}
+  m_LocalPosition: {x: -4.32, y: 0.86, z: 0.11366701}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4135330652112276}
@@ -141,6 +142,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427757939600686}
   m_Mesh: {fileID: 4300000, guid: 2060f3681ef023544b8338d8bc70bc26, type: 3}
+--- !u!65 &65236359503229756
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427757939600686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.162635, y: 0.97682047, z: 3.9118307}
+  m_Center: {x: -0.21482933, y: 0.030823825, z: 1.9559084}
 --- !u!114 &114416179789523758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vapor: {fileID: 198966309741286556}
   cooldownVapor: 4
+  Damage: {fileID: 65236359503229756}
 --- !u!198 &198966309741286556
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -220,7 +234,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.97
+      scalar: 2.81
       minScalar: 5
       maxCurve:
         serializedVersion: 2

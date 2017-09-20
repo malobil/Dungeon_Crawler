@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Raycast : MonoBehaviour {
+public class Raycast_Pistolet : MonoBehaviour {
 
 	public float range = 100f;
 

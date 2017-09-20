@@ -917,7 +917,8 @@ MonoBehaviour:
   wilfried_current_HP: 100
   wilfried_max_HP: 100
   wilfried_min_HP: 0
-  damages_To_Wilfried: 10
+  damages_to_wilfried: 10
+  heal_wilfried: 10
   hp: {fileID: 1880665377}
   inventory: {fileID: 896253209}
   isGemmeEquiped: 0
