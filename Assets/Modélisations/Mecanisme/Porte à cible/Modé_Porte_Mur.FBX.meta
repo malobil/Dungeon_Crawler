@@ -1,32 +1,58 @@
 fileFormatVersion: 2
-guid: 9d8885a5abbfac24ebbc11ce4ee9a70d
-timeCreated: 1505892059
+guid: d532cb01a8fbc9247aa84f324520ca1b
+timeCreated: 1505906353
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: Cylinder002
-    100002: Cylinder003
-    100004: //RootNode
-    100006: Porte bas
-    100008: Porte haut
-    400000: Cylinder002
-    400002: Cylinder003
-    400004: //RootNode
-    400006: Porte bas
-    400008: Porte haut
-    2300000: Cylinder002
-    2300002: Cylinder003
-    2300004: Porte bas
-    2300006: Porte haut
-    3300000: Cylinder002
-    3300002: Cylinder003
-    3300004: Porte bas
-    3300006: Porte haut
-    4300000: Porte bas
-    4300002: Porte haut
-    4300004: Cylinder002
-    4300006: Cylinder003
+    100000: Cylinder001
+    100002: Line001
+    100004: Line002
+    100006: //RootNode
+    100008: Object001
+    100010: PorteBa
+    100012: PorteO
+    100014: Torus002
+    100016: Torus003
+    100018: Torus004
+    400000: Cylinder001
+    400002: Line001
+    400004: Line002
+    400006: //RootNode
+    400008: Object001
+    400010: PorteBa
+    400012: PorteO
+    400014: Torus002
+    400016: Torus003
+    400018: Torus004
+    2300000: Cylinder001
+    2300002: Line001
+    2300004: Line002
+    2300006: Object001
+    2300008: PorteBa
+    2300010: PorteO
+    2300012: Torus002
+    2300014: Torus003
+    2300016: Torus004
+    3300000: Cylinder001
+    3300002: Line001
+    3300004: Line002
+    3300006: Object001
+    3300008: PorteBa
+    3300010: PorteO
+    3300012: Torus002
+    3300014: Torus003
+    3300016: Torus004
+    4300000: Object001
+    4300002: PorteBa
+    4300004: PorteO
+    4300006: Cylinder001
+    4300008: Line001
+    4300010: Line002
+    4300012: Torus002
+    4300014: Torus003
+    4300016: Torus004
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1

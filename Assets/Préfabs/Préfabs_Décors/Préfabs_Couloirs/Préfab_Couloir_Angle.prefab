@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 95752878715367260}
   - component: {fileID: 65591497974875712}
   m_Layer: 0
-  m_Name: "Pr\xE9fab_Couloir_Angle 1"
+  m_Name: "Pr\xE9fab_Couloir_Angle"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
