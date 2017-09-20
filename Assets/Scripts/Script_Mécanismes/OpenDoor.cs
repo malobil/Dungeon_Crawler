@@ -8,10 +8,12 @@ public class OpenDoor : MonoBehaviour
 void FixedUpdate () 
 	{
 		RaycastHit hit ;
+
 		if (Physics.Raycast(transform.position,transform.forward, out hit,4))
 		{
 		   gameObject.GetComponent<Animator>().SetTrigger("OpenDoor");
 		}
+		if (other.gameObject.tag == "...")
 	}
 }
 
