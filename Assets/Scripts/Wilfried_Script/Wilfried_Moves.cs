@@ -5,7 +5,6 @@ using UnityEngine;
 public class Wilfried_Moves : MonoBehaviour {
 
 	public float raycastRange ; // range of raycast
-	public LayerMask layerWp ; // waypoint layer
 	public float movementSpeed ; // player's speed
 	public float rotationSpeed ;
 
