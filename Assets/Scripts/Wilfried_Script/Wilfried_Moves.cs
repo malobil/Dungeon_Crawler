@@ -20,8 +20,6 @@ public class Wilfried_Moves : MonoBehaviour {
 	private bool haveLeftPoint;	// check if you can go left
 	private bool haveRightPoint ;	// check if you can go right
 
-	private bool isMoving = false ; // check if the player is curently moving
-
 	private float currentRotation ;
 	private Quaternion qTo ;
 
@@ -177,7 +175,7 @@ public class Wilfried_Moves : MonoBehaviour {
 	//turn the camera left or right//
 	void TurnCamera()
 	{
-		transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, rotationSpeed * Time.deltaTime) ;
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, rotationSpeed * Time.deltaTime) ; // need check to not rotate 
 	}
 
 	public Vector3 ReturnFrontWayPoint()
