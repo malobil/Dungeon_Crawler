@@ -4,58 +4,88 @@ using UnityEngine;
 
 public class Wilfried_Moves : MonoBehaviour {
 
-	public float raycastRange ;
-	public LayerMask layer ;
-	public float movementSpeed ;
+	public float raycastRange ; // range of raycast
+	public LayerMask layer ; // waypoint layer
+	public float movementSpeed ; // player's speed
+	public float rotationSpeed ;
 
-	private Vector3 frontWayPoint ;
-	private Vector3 backWayPoint ;
-	private Vector3 leftWayPoint ;
-	private Vector3 rightWayPoint ;
+	private Vector3 frontWayPoint ; // the front direction point
+	private Vector3 backWayPoint ; // the back direction point
+	private Vector3 leftWayPoint ; // the left direction point
+	private Vector3 rightWayPoint ; // the right direction point
 
-	private bool haveFrontPoint ;
-	private bool haveBackPoint ;
-	private bool haveLeftPoint;
-	private bool haveRightPoint ;
+	private Vector3 destination ; // player's destination
+
+	private bool haveFrontPoint ; // check if you can go forward
+	private bool haveBackPoint ; // check if you can go backward
+	private bool haveLeftPoint;	// check if you can go left
+	private bool haveRightPoint ;	// check if you can go right
+
+	private bool isMoving = false ; // check if the player is curently moving
+
+	private float currentRotation ;
+	private Quaternion qTo = Quaternion.identity ;
 
 
 	// Use this for initialization
 	void Start () 
 	{
-		
+		destination = transform.position ;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown("z") && haveFrontPoint)
+		if(Input.GetKeyDown("z") && haveFrontPoint && !isMoving)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, frontWayPoint, movementSpeed) ;
+			//isMoving = true ;
+			destination = frontWayPoint ;
 		}
 
-		if(Input.GetKeyDown("s") && haveBackPoint)
+		if(Input.GetKeyDown("s") && haveBackPoint && !isMoving)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, backWayPoint, movementSpeed) ;
+			//isMoving = true ;
+			destination = backWayPoint ;
 		}
 
-		if(Input.GetKeyDown("q") && haveLeftPoint)
+		if(Input.GetKeyDown("q") && haveLeftPoint && !isMoving)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, leftWayPoint, movementSpeed) ;
+			//isMoving = true ;
+			destination = leftWayPoint ;
 		}
 
-		if(Input.GetKeyDown("d") && haveRightPoint)
+		if(Input.GetKeyDown("d") && haveRightPoint && !isMoving)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, rightWayPoint, movementSpeed) ;
+			//isMoving = true ;
+			destination = rightWayPoint ;
 		}
+
+		if(Input.GetKeyDown("a"))
+		{
+			currentRotation -= 90 ;
+			qTo = Quaternion.Euler(0,currentRotation,0) ;
+		}
+
+		if(Input.GetKeyDown("e"))
+		{	
+			currentRotation += 90 ;
+			qTo = Quaternion.Euler(0,currentRotation,0) ;
+		}
+
+		
+		Move() ;
+		
+
+		TurnCamera() ;
 	}
 
 	void FixedUpdate()
 	{	
 		//Debug
-		Debug.DrawRay(transform.position,Vector3.forward * raycastRange,Color.green) ;
+		/*Debug.DrawRay(transform.position,Vector3.forward * raycastRange,Color.green) ;
 		Debug.DrawRay(transform.position,Vector3.back * raycastRange,Color.green) ;
 		Debug.DrawRay(transform.position,Vector3.left * raycastRange,Color.green) ;
-		Debug.DrawRay(transform.position,Vector3.right * raycastRange,Color.green) ;
+		Debug.DrawRay(transform.position,Vector3.right * raycastRange,Color.green) ;*/
 
 		RaycastHit frontHit ;
 		RaycastHit backHit ;
@@ -63,52 +93,90 @@ public class Wilfried_Moves : MonoBehaviour {
 		RaycastHit rightHit ;
 
 		//Shot a ray in 4 direction to check if got a wayPoint //
-		if(Physics.Raycast(transform.position,Vector3.forward,out frontHit,raycastRange,layer))
+
+		//Check forward//
+		if(Physics.Raycast(transform.position,transform.forward,out frontHit,raycastRange,layer))
 		{
-			Debug.Log("Hit") ;
+			//Debug.Log("Hit") ;
 			frontWayPoint = frontHit.transform.position ;
 			haveFrontPoint = true ;
-			Debug.Log(frontWayPoint) ;
+			//Debug.Log(frontWayPoint) ;
 		}
 		else
 		{
 			haveFrontPoint = false ;
 		}
 
-		if(Physics.Raycast(transform.position,Vector3.back,out backHit,raycastRange,layer))
+		//Check backward//
+		if(Physics.Raycast(transform.position,-transform.forward,out backHit,raycastRange,layer))
 		{
-			Debug.Log("Hit") ;
+			//Debug.Log("Hit") ;
 			backWayPoint = backHit.transform.position ;
 			haveBackPoint = true ;
-			Debug.Log(backWayPoint) ;
+			//Debug.Log(backWayPoint) ;
 		}
 		else
 		{
 			haveBackPoint = false ;
 		}
 
-		if(Physics.Raycast(transform.position,Vector3.left,out leftHit,raycastRange,layer))
+		//Check left//
+		if(Physics.Raycast(transform.position,-transform.right,out leftHit,raycastRange,layer))
 		{
-			Debug.Log("Hit") ;
+			//Debug.Log("Hit") ;
 			leftWayPoint = leftHit.transform.position ;
 			haveLeftPoint = true ;
-			Debug.Log(leftWayPoint) ;
+			//Debug.Log(leftWayPoint) ;
 		}
 		else
 		{
 			haveLeftPoint = false ;
 		}
 
-		if(Physics.Raycast(transform.position,Vector3.right,out rightHit,raycastRange,layer))
+		//Check right//
+		if(Physics.Raycast(transform.position,transform.right,out rightHit,raycastRange,layer))
 		{
-			Debug.Log("Hit") ;
+			//Debug.Log("Hit") ;
 			rightWayPoint = rightHit.transform.position ;
 			haveRightPoint = true ;
-			Debug.Log(rightWayPoint) ;
+			//Debug.Log(rightWayPoint) ;
 		}
 		else
 		{
 			haveRightPoint = false ;
 		}
 	}
+
+	//Move the player to a destination
+	void Move()
+	{
+		transform.position = Vector3.MoveTowards(transform.position, destination, movementSpeed * Time.deltaTime) ;
+	}
+
+	//turn the camera left or right//
+	void TurnCamera()
+	{
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, rotationSpeed * Time.deltaTime) ;
+	}
+
+	public Vector3 ReturnFrontWayPoint()
+	{
+		return frontWayPoint ;
+	}
+
+	public Vector3 ReturnBackWayPoint()
+	{
+		return backWayPoint ;
+	}
+
+	public Vector3 ReturnLeftWayPoint()
+	{
+		return leftWayPoint ;
+	}
+
+	public Vector3 ReturnRightWayPoint()
+	{
+		return rightWayPoint ;
+	}
+
 }
