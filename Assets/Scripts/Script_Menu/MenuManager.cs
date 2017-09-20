@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour {
         Debug.Log("quit game");
     }
 
-	public void PlayMenu (int Menu_Scene_Jeu)
+	public void PlayMenu (string Menu_Scene_Jeu)
    	{
         SceneManager.LoadScene (Menu_Scene_Jeu);
    	}
