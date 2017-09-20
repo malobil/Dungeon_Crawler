@@ -13,7 +13,7 @@ void FixedUpdate ()
 		{
 		   gameObject.GetComponent<Animator>().SetTrigger("OpenDoor");
 		}
-		if (other.gameObject.tag == "...")
+		//if (other.gameObject.tag == "...")
 	}
 }
 
