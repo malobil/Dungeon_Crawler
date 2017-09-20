@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Scenes/Sc\xE8ne_Menu_Louis/Menu_louis.unity"
+    guid: a835ee5e7cd875840841f0b09d08f2a3
+  - enabled: 1
+    path: "Assets/Scenes/Sc\xE8ne_Menu_Louis/Menu_Scene_Jeu.unity"
+    guid: 546008fcbc7f188418731d0a6098603f
