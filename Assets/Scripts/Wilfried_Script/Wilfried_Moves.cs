@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wilfried_Moves : MonoBehaviour {
 
 	public float raycastRange ; // range of raycast
-	public LayerMask layer ; // waypoint layer
+	public LayerMask layerWp ; // waypoint layer
 	public float movementSpeed ; // player's speed
 	public float rotationSpeed ;
 
@@ -95,12 +95,16 @@ public class Wilfried_Moves : MonoBehaviour {
 		//Shot a ray in 4 direction to check if got a wayPoint //
 
 		//Check forward//
-		if(Physics.Raycast(transform.position,transform.forward,out frontHit,raycastRange,layer))
+		if(Physics.Raycast(transform.position,transform.forward,out frontHit,raycastRange))
 		{
-			//Debug.Log("Hit") ;
-			frontWayPoint = frontHit.transform.position ;
-			haveFrontPoint = true ;
-			//Debug.Log(frontWayPoint) ;
+			//Debug.Log(frontHit.transform.gameObject.layer) ;
+			if(frontHit.transform.gameObject.layer == 8)
+			{
+				//Debug.Log("Hit") ;
+				frontWayPoint = frontHit.transform.position ;
+				haveFrontPoint = true ;
+				//Debug.Log(frontWayPoint) ;
+			}
 		}
 		else
 		{
@@ -108,12 +112,19 @@ public class Wilfried_Moves : MonoBehaviour {
 		}
 
 		//Check backward//
-		if(Physics.Raycast(transform.position,-transform.forward,out backHit,raycastRange,layer))
+		if(Physics.Raycast(transform.position,-transform.forward,out backHit,raycastRange))
 		{
-			//Debug.Log("Hit") ;
-			backWayPoint = backHit.transform.position ;
-			haveBackPoint = true ;
-			//Debug.Log(backWayPoint) ;
+			if(backHit.transform.gameObject.layer == 8)
+			{
+				//Debug.Log("Hit") ;
+				backWayPoint = backHit.transform.position ;
+				haveBackPoint = true ;
+				//Debug.Log(backWayPoint) ;
+			}
+			else
+			{
+				haveBackPoint = false ;	
+			}
 		}
 		else
 		{
@@ -121,12 +132,15 @@ public class Wilfried_Moves : MonoBehaviour {
 		}
 
 		//Check left//
-		if(Physics.Raycast(transform.position,-transform.right,out leftHit,raycastRange,layer))
+		if(Physics.Raycast(transform.position,-transform.right,out leftHit,raycastRange))
 		{
-			//Debug.Log("Hit") ;
-			leftWayPoint = leftHit.transform.position ;
-			haveLeftPoint = true ;
-			//Debug.Log(leftWayPoint) ;
+			if(leftHit.transform.gameObject.layer == 8)
+			{
+				//Debug.Log("Hit") ;
+				leftWayPoint = leftHit.transform.position ;
+				haveLeftPoint = true ;
+				//Debug.Log(leftWayPoint) ;
+			}
 		}
 		else
 		{
@@ -134,12 +148,15 @@ public class Wilfried_Moves : MonoBehaviour {
 		}
 
 		//Check right//
-		if(Physics.Raycast(transform.position,transform.right,out rightHit,raycastRange,layer))
+		if(Physics.Raycast(transform.position,transform.right,out rightHit,raycastRange))
 		{
-			//Debug.Log("Hit") ;
-			rightWayPoint = rightHit.transform.position ;
-			haveRightPoint = true ;
-			//Debug.Log(rightWayPoint) ;
+			if(rightHit.transform.gameObject.layer == 8)
+			{
+				//Debug.Log("Hit") ;
+				rightWayPoint = rightHit.transform.position ;
+				haveRightPoint = true ;
+				//Debug.Log(rightWayPoint) ;
+			}
 		}
 		else
 		{
