@@ -1,37 +1,22 @@
 fileFormatVersion: 2
-guid: 430808409f15d2849ba96a4d63006bcc
-timeCreated: 1505836616
+guid: f4842ba9aab60b541bbe2b98710c5c64
+timeCreated: 1505917091
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: Box001
-    100002: Box002
-    100004: Box003
-    100006: Box004
-    100008: Box005
-    100010: //RootNode
-    400000: Box001
-    400002: Box002
-    400004: Box003
-    400006: Box004
-    400008: Box005
-    400010: //RootNode
-    2300000: Box001
-    2300002: Box002
-    2300004: Box003
-    2300006: Box004
-    2300008: Box005
-    3300000: Box001
-    3300002: Box002
-    3300004: Box003
-    3300006: Box004
-    3300008: Box005
-    4300000: Box001
-    4300002: Box002
-    4300004: Box003
-    4300006: Box004
-    4300008: Box005
+    100000: //RootNode
+    100002: Mur exterieur
+    100004: Mur Interieur
+    400000: //RootNode
+    400002: Mur exterieur
+    400004: Mur Interieur
+    2300000: Mur exterieur
+    2300002: Mur Interieur
+    3300000: Mur exterieur
+    3300002: Mur Interieur
+    4300000: Mur Interieur
+    4300002: Mur exterieur
     9500000: //RootNode
   materials:
     importMaterials: 1
