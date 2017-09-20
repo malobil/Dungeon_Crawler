@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour {
         Debug.Log("quit game");
     }
 
+
 	// Use this for initialization
 	void Start () {
 		
