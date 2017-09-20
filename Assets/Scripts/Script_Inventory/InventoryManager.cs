@@ -8,6 +8,8 @@ public class InventoryManager : MonoBehaviour {
 	public List<GameObject> imageSlot = new List<GameObject>() ;
 	public GameObject refImage ;
 	private bool haveSlot = false ;
+	Ray ray ;
+	RaycastHit hit ;
 
 	// Use this for initialization
 	void Start () 
@@ -21,8 +23,6 @@ public class InventoryManager : MonoBehaviour {
 		// ClickOnItem
 		if(Input.GetMouseButtonDown(0))
 		{
-			RaycastHit hit ;
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			haveSlot = false ; // You can add an item in a slot
 			Debug.Log("haha") ;
 			for(int i = 0; i < slot.Count; i++) // Continue until slot limit is reached
