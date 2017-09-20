@@ -481,6 +481,17 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1975153260}
+    - target: {fileID: 114223927746992736, guid: 88fd3fb6626fbeb4c8d4f87e5dcdd80c,
+        type: 2}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114223927746992736, guid: 88fd3fb6626fbeb4c8d4f87e5dcdd80c,
+        type: 2}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dc30ab9aeafe79143bf1b49735cd7603,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88fd3fb6626fbeb4c8d4f87e5dcdd80c, type: 2}
   m_IsPrefabParent: 0
