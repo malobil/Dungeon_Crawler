@@ -11,6 +11,8 @@ public class Wilfried_HP : MonoBehaviour {
     public float wilfried_min_HP;
     public float damages_To_Wilfried;
     public Text hp;
+    public GameObject inventory;
+
 	// Use this for initialization
 	void Start () {
         LifeManager();
@@ -30,4 +32,15 @@ public class Wilfried_HP : MonoBehaviour {
             LifeManager();
         }
 	}
+
+    public void Open_Inventory()
+    {
+        inventory.SetActive(true);
+    }
+
+    public void Close_Inventory()
+    {
+        inventory.SetActive(false);
+    }
+
 }
