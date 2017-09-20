@@ -6,7 +6,7 @@ public class Wilfried_Moves : MonoBehaviour {
 
 	public float raycastRange ; // range of raycast
 	public float movementSpeed ; // player's speed
-	public float rotationSpeed ;
+	public float rotationSpeed ; // player turn speed
 
 	private Vector3 frontWayPoint ; // the front direction point
 	private Vector3 backWayPoint ; // the back direction point
