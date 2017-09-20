@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Bouclevapeur : MonoBehaviour {
 
-	public ParticleSystem vapor;
+
 	public float cooldownVapor;
 	private float cooldownActive;
+	private ParticleSystem vapor;
 	private bool vaporActive;
-	public BoxCollider Damage;
 
 
 
 	// Use this for initialization
 	void Start () 
 	{
+		vapor = GetComponent<ParticleSystem>() ;
 		cooldownActive = cooldownVapor;
 	}
 	
@@ -55,10 +56,10 @@ public class Bouclevapeur : MonoBehaviour {
 		} 
 
 	}
-/*		void OnParticleCollision(GameObject wilfred)
+	void OnParticleCollision(GameObject wilfred)
 		{
-			wilfred.GetComponent;
-		}*/
+			wilfred.GetComponent<Wilfried_Moves>().TakeOnTimeDamage(12) ;
+		}
 }
 
 
