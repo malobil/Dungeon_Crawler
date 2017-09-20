@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class Trigger_FadeCam : MonoBehaviour {
 
 	public float fadeSpeed ;
-	public Image vrScreen ;
 	public Image classicScreen ;
 	private bool screenChange;
 	private Color c ;
+	private bool fade ; 
 
 	// Use this for initialization
 	void Start () {
@@ -23,15 +23,14 @@ public class Trigger_FadeCam : MonoBehaviour {
 		if (screenChange && c.a >= 0)
 		{
 			c.a -= Time.deltaTime * fadeSpeed ;
-			vrScreen.color = c ;
 			classicScreen.color = c;
 		}
 		else if (!screenChange)
 		{
 			c.a += Time.deltaTime * fadeSpeed ;
-			vrScreen.color = c ;
 			classicScreen.color = c;
 		}
+		
 	}
 
 	void Fade () {
