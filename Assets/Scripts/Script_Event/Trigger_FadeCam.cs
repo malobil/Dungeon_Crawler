@@ -10,7 +10,7 @@ public class Trigger_FadeCam : MonoBehaviour {
 	public Image classicScreen ;
 	private bool screenChange;
 	private Color c ;
-	private bool fade ; 
+	public GameObject player ; 
 
 	// Use this for initialization
 	void Start () {
@@ -25,15 +25,15 @@ public class Trigger_FadeCam : MonoBehaviour {
 			c.a -= Time.deltaTime * fadeSpeed ;
 			classicScreen.color = c;
 		}
-		else if (!screenChange)
+		else if (screenChange = false)
 		{
+			c.a = 0f;
 			c.a += Time.deltaTime * fadeSpeed ;
 			classicScreen.color = c;
 		}
-		
 	}
-
-	void Fade () {
-		screenChange = false ;
+	void OnTriggerEnter (Collider player) 
+	{ 
+		screenChange = false;
 	}
 }
