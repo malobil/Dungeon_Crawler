@@ -19,8 +19,10 @@ public class InventoryManager : MonoBehaviour {
 	void Update () 
 	{
 		// ClickOnItem
-		if(Input.GetButtonDown("Fire1"))
+		if(Input.GetMouseButtonDown(0))
 		{
+			RaycastHit hit ;
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			haveSlot = false ; // You can add an item in a slot
 			Debug.Log("haha") ;
 			for(int i = 0; i < slot.Count; i++) // Continue until slot limit is reached
