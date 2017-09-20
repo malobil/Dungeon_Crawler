@@ -12,7 +12,7 @@ void FixedUpdate ()
 		if (Input.GetMouseButtonDown(0))
         {
           	Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
-           	if (Physics.Raycast(raycast,out hit,4) && (hit.collider.tag == "Test Boutton"))
+           	if (Physics.Raycast(raycast,out hit,4) && (hit.collider.tag == "Test boutton"))
 			{
 		   		GetComponent<Animator>().SetTrigger("OpenDoor");
 			}
