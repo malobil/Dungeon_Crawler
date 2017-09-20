@@ -23,37 +23,40 @@ public class Wilfried_Moves : MonoBehaviour {
 	private bool isMoving = false ; // check if the player is curently moving
 
 	private float currentRotation ;
-	private Quaternion qTo = Quaternion.identity ;
+	private Quaternion qTo ;
 
 
 	// Use this for initialization
 	void Start () 
 	{
 		destination = transform.position ;
+		qTo = transform.rotation ;
+		currentRotation = transform.rotation.eulerAngles.y ;
+		Debug.Log(currentRotation) ;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown("z") && haveFrontPoint && !isMoving)
+		if(Input.GetKeyDown("z") && haveFrontPoint)
 		{
 			//isMoving = true ;
 			destination = frontWayPoint ;
 		}
 
-		if(Input.GetKeyDown("s") && haveBackPoint && !isMoving)
+		if(Input.GetKeyDown("s") && haveBackPoint)
 		{
 			//isMoving = true ;
 			destination = backWayPoint ;
 		}
 
-		if(Input.GetKeyDown("q") && haveLeftPoint && !isMoving)
+		if(Input.GetKeyDown("q") && haveLeftPoint)
 		{
 			//isMoving = true ;
 			destination = leftWayPoint ;
 		}
 
-		if(Input.GetKeyDown("d") && haveRightPoint && !isMoving)
+		if(Input.GetKeyDown("d") && haveRightPoint)
 		{
 			//isMoving = true ;
 			destination = rightWayPoint ;
@@ -74,7 +77,6 @@ public class Wilfried_Moves : MonoBehaviour {
 		
 		Move() ;
 		
-
 		TurnCamera() ;
 	}
 
@@ -166,7 +168,10 @@ public class Wilfried_Moves : MonoBehaviour {
 	//Move the player to a destination
 	void Move()
 	{
-		transform.position = Vector3.MoveTowards(transform.position, destination, movementSpeed * Time.deltaTime) ;
+		if(destination != transform.position)
+		{
+			transform.position = Vector3.MoveTowards(transform.position, destination, movementSpeed * Time.deltaTime) ;
+		}
 	}
 
 	//turn the camera left or right//
