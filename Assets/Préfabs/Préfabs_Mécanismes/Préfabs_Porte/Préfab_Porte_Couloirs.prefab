@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4854518666751080}
   - component: {fileID: 95924471046884284}
   m_Layer: 0
-  m_Name: "Mod\xE9_Porte_Couloirs"
+  m_Name: "Pr\xE9fab_Porte_Couloirs"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

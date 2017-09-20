@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4510545391065996}
   - component: {fileID: 95867902032406098}
   m_Layer: 0
-  m_Name: "Pr\xE9fab_Porte"
+  m_Name: "Pr\xE9fab_Porte_Mur"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
