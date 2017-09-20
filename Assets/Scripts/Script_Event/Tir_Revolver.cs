@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attaque_Arme : MonoBehaviour {
+public class Tir_Revolver : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
