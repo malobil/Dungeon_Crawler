@@ -19,15 +19,16 @@ public class Bouclevapeur : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+		{
 
 		CooldownVapor();
 		ParticuleOnOff();
 		
-	}
+		}
 
 	void CooldownVapor()
-	{
+		{
 
 		cooldownActive -= Time.deltaTime;
 
@@ -54,11 +55,10 @@ public class Bouclevapeur : MonoBehaviour {
 		} 
 
 	}
-	void OnTriggerEnter()
-	{
-
-
-
-	}
-
+/*		void OnParticleCollision(GameObject wilfred)
+		{
+			wilfred.GetComponent;
+		}*/
 }
+
+
