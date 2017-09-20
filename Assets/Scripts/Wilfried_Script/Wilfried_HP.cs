@@ -13,6 +13,9 @@ public class Wilfried_HP : MonoBehaviour {
     public Text hp;
     public GameObject inventory;
 
+    public bool isGemmeEquiped = false;
+    public float gemme_HP_plus;
+
 	// Use this for initialization
 	void Start () {
         LifeManager();
@@ -27,9 +30,26 @@ public class Wilfried_HP : MonoBehaviour {
 	void Update () {
         hp.text = wilfried_current_HP.ToString() + "/" + wilfried_max_HP.ToString();
         if (Input.GetKeyDown("m") & wilfried_current_HP > wilfried_min_HP)
-        {   //Lorsque joueur appuie sur la touche "m"
+        {   //Lorsque joueur appuie sur la touche "m", il perd 10HP
             wilfried_current_HP = wilfried_current_HP - damages_To_Wilfried;
             LifeManager();
+        }
+        if (Input.GetKeyDown("g")){ //Lorsque le joueur appuie sur G, il equipe ou desequipe une gemme qui lui donne +10 en HP max
+        	if (isGemmeEquiped == false){
+        		wilfried_max_HP += gemme_HP_plus;
+        		LifeManager();
+        		isGemmeEquiped = true;
+        	} else if (isGemmeEquiped == true){
+        		if (wilfried_current_HP >= wilfried_max_HP - gemme_HP_plus){
+        			wilfried_max_HP -= gemme_HP_plus;
+        			wilfried_current_HP = wilfried_max_HP;
+        			LifeManager();
+        		} else if (wilfried_current_HP < wilfried_max_HP - gemme_HP_plus){
+        			wilfried_max_HP -= gemme_HP_plus;
+        			LifeManager();
+        		}
+        		isGemmeEquiped = false;
+        	}
         }
 	}
 

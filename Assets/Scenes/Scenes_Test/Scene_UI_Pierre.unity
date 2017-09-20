@@ -920,6 +920,8 @@ MonoBehaviour:
   damages_To_Wilfried: 10
   hp: {fileID: 1880665377}
   inventory: {fileID: 896253209}
+  isGemmeEquiped: 0
+  gemme_HP_plus: 10
 --- !u!4 &1697668732
 Transform:
   m_ObjectHideFlags: 0
