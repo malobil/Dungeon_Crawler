@@ -7,6 +7,8 @@ public class Wilfried_Moves : MonoBehaviour {
 	public float raycastRange ; // range of raycast
 	public float movementSpeed ; // player's speed
 	public float rotationSpeed ; // player turn speed
+	public float maxHP = 100 ;
+	public float currentHP ;
 
 	private Vector3 frontWayPoint ; // the front direction point
 	private Vector3 backWayPoint ; // the back direction point
@@ -23,12 +25,18 @@ public class Wilfried_Moves : MonoBehaviour {
 	private float currentRotation ;
 	private Quaternion qTo ;
 
-	private bool isMoving = false ;
-	private bool isTurning = false ;
+	private bool canMove = true ;
+
+	private bool dotIsActive = false ;
 
 	// Use this for initialization
 	void Start () 
 	{
+		if(currentHP > maxHP)
+		{
+			currentHP = maxHP ;
+		}
+
 		destination = transform.position ;
 		qTo = transform.rotation ;
 		currentRotation = transform.rotation.eulerAngles.y ;
@@ -38,25 +46,25 @@ public class Wilfried_Moves : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown("z") && haveFrontPoint && !isTurning)
+		if(Input.GetKeyDown("z") && haveFrontPoint && canMove)
 		{
 			//isMoving = true ;
 			destination = frontWayPoint ;
 		}
 
-		if(Input.GetKeyDown("s") && haveBackPoint && !isTurning)
+		if(Input.GetKeyDown("s") && haveBackPoint && canMove)
 		{
 			//isMoving = true ;
 			destination = backWayPoint ;
 		}
 
-		if(Input.GetKeyDown("q") && haveLeftPoint && !isTurning)
+		if(Input.GetKeyDown("q") && haveLeftPoint && canMove)
 		{
 			//isMoving = true ;
 			destination = leftWayPoint ;
 		}
 
-		if(Input.GetKeyDown("d") && haveRightPoint && !isTurning)
+		if(Input.GetKeyDown("d") && haveRightPoint && canMove)
 		{
 			//isMoving = true ;
 			destination = rightWayPoint ;
@@ -82,12 +90,13 @@ public class Wilfried_Moves : MonoBehaviour {
 
 	void FixedUpdate()
 	{	
-		//Debug
+		//Debug//
 		/*Debug.DrawRay(transform.position,Vector3.forward * raycastRange,Color.green) ;
 		Debug.DrawRay(transform.position,Vector3.back * raycastRange,Color.green) ;
 		Debug.DrawRay(transform.position,Vector3.left * raycastRange,Color.green) ;
 		Debug.DrawRay(transform.position,Vector3.right * raycastRange,Color.green) ;*/
 
+		// Variable that stock object hit //
 		RaycastHit frontHit ;
 		RaycastHit backHit ;
 		RaycastHit leftHit ;
@@ -183,11 +192,11 @@ public class Wilfried_Moves : MonoBehaviour {
 		if(destination != transform.position)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, destination, movementSpeed * Time.deltaTime) ;
-			isMoving = true ;
+			canMove = false ;
 		}
 		else
 		{
-			isMoving = false ;
+			canMove = true ;
 		}
 	}
 
@@ -197,14 +206,38 @@ public class Wilfried_Moves : MonoBehaviour {
 		if(qTo != transform.rotation)
 		{
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, rotationSpeed * Time.deltaTime) ; // need check to not rotate
-			isTurning = true ;
+			canMove = false ;
 		}
 		else if(qTo == transform.rotation) 
 		{
-			isTurning = false ;
+			canMove = true ;
 		}
 	}
 
+	void CheckHP()
+	{
+		if(currentHP <= 0)
+		{
+			Destroy(gameObject) ;
+		}
+	}
+
+	public void TakeInstantDamage(float damage)
+	{
+		currentHP -= damage ;
+		CheckHP() ;
+	}
+
+	public void TakeOnTimeDamage(float damage)
+	{
+		if(!dotIsActive)
+		{
+			StartCoroutine(WaitDot(damage)) ;
+			dotIsActive = true ;
+		}
+	}
+
+	//Function return my nearest points // (mainly for AI)
 	public Vector3 ReturnFrontWayPoint()
 	{
 		return frontWayPoint ;
@@ -223,6 +256,13 @@ public class Wilfried_Moves : MonoBehaviour {
 	public Vector3 ReturnRightWayPoint()
 	{
 		return rightWayPoint ;
+	}
+
+	IEnumerator WaitDot(float damage)
+	{
+		TakeInstantDamage(damage) ;
+		yield return new WaitForSeconds(2) ;
+		dotIsActive = false ;
 	}
 
 }
