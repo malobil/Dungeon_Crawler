@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
     public string sceneToLoad;
+    private bool isPause = false;
+
 
     public void QuitMenu ()
    	{
@@ -18,7 +20,15 @@ public class MenuManager : MonoBehaviour {
         SceneManager.LoadScene (sceneToLoad);
    	}
 
-    
+    void PauseMenu ()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            isPause = !isPause;
+
+       
+    }
+
+
 
 	// Use this for initialization
 	void Start () {
