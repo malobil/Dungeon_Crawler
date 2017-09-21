@@ -17,10 +17,17 @@ public class Animator_Event : MonoBehaviour {
 
 	public void SendOpenMessage()
 	{
+
 		myDoorManager.SetOpen();
 	}
 	public void SendCloseMessage()
 	{
 		myDoorManager.SetClosed();
+	}
+	public void OpenSoundPlay(){
+		GetComponent<AudioSource>().Play();
+	}
+	public void CloseSoundPlay(){
+		GetComponent<AudioSource>().Play();		
 	}
 }
