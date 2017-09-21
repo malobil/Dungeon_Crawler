@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coffre : MonoBehaviour {
+public class Coffre : MonoBehaviour 
+{
+public int range;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+void FixedUpdate () 
+	{
+		RaycastHit hit ;
+
+		if (Input.GetMouseButtonDown(0))
+        {
+          	Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+           	if (Physics.Raycast(raycast,out hit,range))
+			{
+				if (hit.collider.tag == "Coffre"){
+		   			hit.collider.GetComponent<CoffreManager>().ToggleOuvertureCoffre();
+		   		}
+			}
+			
+        }
+    }
 }
+

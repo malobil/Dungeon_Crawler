@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d56cec1abda803d41af027a9b5b362a1, type: 3}
-  m_Name: ItemExample
+  m_Name: GemHPBoost +
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 0}
-  itemName: pourfendeur d'hymen
+  inventorySprite: {fileID: 21300004, guid: ccf3988361df56a41a22db6d0f11b4d8, type: 3}
+  itemName: Gemme de vie rare
   gemRafinedDescription: 
-  atkBoost: 25
-  hPBoost: 0
+  atkBoost: 0
+  hPBoost: 25
   healGain: 0
   isGemRafined: 0

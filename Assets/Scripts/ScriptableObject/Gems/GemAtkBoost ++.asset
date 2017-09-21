@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d56cec1abda803d41af027a9b5b362a1, type: 3}
-  m_Name: ItemExample
+  m_Name: GemAtkBoost ++
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 0}
-  itemName: pourfendeur d'hymen
+  inventorySprite: {fileID: 21300000, guid: de7ba6ddd22c1b549b69cb856275feb5, type: 3}
+  itemName: Gemme d'attaque epique
   gemRafinedDescription: 
-  atkBoost: 25
+  atkBoost: 40
   hPBoost: 0
   healGain: 0
   isGemRafined: 0
