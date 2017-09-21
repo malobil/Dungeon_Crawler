@@ -5135,9 +5135,9 @@ MonoBehaviour:
   - {fileID: 0}
   gemSlot:
   - {fileID: 1362211301750020}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1511743821955106}
+  - {fileID: 1068470010641854}
+  - {fileID: 1234046586993302}
 --- !u!114 &114823317532427068
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -103,7 +103,14 @@ public class InventoryManagerK : MonoBehaviour {
 			//Debug.Log("Boucle") ;
 			if(gemEquip[i] == null && !alreadyPutGem)
 			{
-				//Debug.Log("Condition") ;
+				if(associateScriptable.atkBoost > 0)
+				{
+					GameObject.FindGameObjectWithTag("Player").GetComponent<Wilfried_Moves>().UpAtk(associateScriptable.atkBoost) ;
+				}
+				if(associateScriptable.hPBoost > 0)
+				{
+					GameObject.FindGameObjectWithTag("Player").GetComponent<Wilfried_Moves>().AddMaxHp(associateScriptable.hPBoost) ;
+				}
 				gemSlot[i].GetComponent<InventoryGemSystem>().AddGemToSlot(associateScriptable,i) ;
 				gemEquip[i] = associateScriptable ;
 				alreadyPutGem = true ;
@@ -126,7 +133,14 @@ public class InventoryManagerK : MonoBehaviour {
 			if(objectInSlot[i] == null && !alreadyPut)
 			{
 				//Debug.Log("Condition") ;
-
+				if(script.atkBoost > 0)
+				{
+					GameObject.FindGameObjectWithTag("Player").GetComponent<Wilfried_Moves>().DownAtk(script.atkBoost) ;
+				}
+				if(script.hPBoost > 0)
+				{
+					GameObject.FindGameObjectWithTag("Player").GetComponent<Wilfried_Moves>().RetireMaxHp(script.hPBoost) ;
+				}
 				slot[i].GetComponent<InventorySlot>().AddObjectToSlot(script,i) ;
 				objectInSlot[i] = script ;
 				alreadyPut = true ;

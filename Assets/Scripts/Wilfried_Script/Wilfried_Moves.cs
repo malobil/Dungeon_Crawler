@@ -10,6 +10,7 @@ public class Wilfried_Moves : MonoBehaviour {
 	public float rotationSpeed ; // player turn speed
 	public float maxHP = 100 ;
 	public float currentHP ;
+	public float currentAtk = 5 ;
 	public Image hpBar ;
 
 	private Vector3 frontWayPoint ; // the front direction point
@@ -217,6 +218,7 @@ public class Wilfried_Moves : MonoBehaviour {
 		}
 	}
 
+	//HP functions //
 	void CheckHP()
 	{
 		if(currentHP <= 0)
@@ -225,15 +227,18 @@ public class Wilfried_Moves : MonoBehaviour {
 		}
 	}
 
-	void AddMaxHp(float hpGain)
+	public void AddMaxHp(float hpGain)
 	{
 		maxHP += hpGain ;
+		ChangeHealthBar() ;
+		Debug.Log(maxHP) ;
 	}
 
-	void RetireMaxHp(float hpLost)
+	public void RetireMaxHp(float hpLost)
 	{
 		maxHP -= hpLost ;
 		currentHP -= hpLost ;
+		ChangeHealthBar() ;
 	}
 
 	void ChangeHealthBar()
@@ -261,6 +266,19 @@ public class Wilfried_Moves : MonoBehaviour {
 			StartCoroutine(WaitDot(damage)) ;
 			dotIsActive = true ;
 		}
+	}
+
+	//Atk functions //
+	public void UpAtk(float numberToAdd)
+	{
+		currentAtk += numberToAdd ;
+		Debug.Log(currentAtk) ;
+	}
+
+	public void DownAtk(float numberToSubtract)
+	{
+		currentAtk -= numberToSubtract ;
+		Debug.Log(currentAtk) ;
 	}
 
 	//Function return my nearest points // (mainly for AI)
