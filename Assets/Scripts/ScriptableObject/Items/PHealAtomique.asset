@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d56cec1abda803d41af027a9b5b362a1, type: 3}
-  m_Name: ItemExample
+  m_Name: PHealAtomique
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 0}
-  itemName: pourfendeur d'hymen
+  inventorySprite: {fileID: 21300000, guid: 7f93241b268546247986e4f9ea64386d, type: 3}
+  itemName: PHeal atomique
   gemRafinedDescription: 
-  atkBoost: 25
+  atkBoost: 0
   hPBoost: 0
-  healGain: 0
+  healGain: 150
   isGemRafined: 0

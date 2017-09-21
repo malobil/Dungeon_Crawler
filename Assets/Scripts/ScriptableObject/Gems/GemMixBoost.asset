@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56cec1abda803d41af027a9b5b362a1, type: 3}
   m_Name: GemMixBoost
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 21300004, guid: ccf3988361df56a41a22db6d0f11b4d8, type: 3}
+  inventorySprite: {fileID: 21300006, guid: ccf3988361df56a41a22db6d0f11b4d8, type: 3}
   itemName: Gemme DIO commune
   gemRafinedDescription: 
   atkBoost: 5

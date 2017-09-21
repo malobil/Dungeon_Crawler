@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d56cec1abda803d41af027a9b5b362a1, type: 3}
-  m_Name: ItemExample
+  m_Name: HealDeVidange
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 0}
-  itemName: pourfendeur d'hymen
+  inventorySprite: {fileID: 21300000, guid: c98c000f8dcd35442b59c32c9509b51b, type: 3}
+  itemName: Heal de vidange
   gemRafinedDescription: 
-  atkBoost: 25
+  atkBoost: 0
   hPBoost: 0
-  healGain: 0
+  healGain: 50
   isGemRafined: 0

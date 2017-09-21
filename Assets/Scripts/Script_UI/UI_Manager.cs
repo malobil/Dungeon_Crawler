@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button_Open : MonoBehaviour {
+public class UI_Manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
