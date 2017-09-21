@@ -12,7 +12,7 @@ public class Wilfried_Moves : MonoBehaviour {
 	public float currentHP ;
 	public float currentAtk = 5 ;
 	public Image hpBar ;
-	public float range ;
+	public float range = 5;
 
 	private Vector3 frontWayPoint ; // the front direction point
 	private Vector3 backWayPoint ; // the back direction point
@@ -30,6 +30,7 @@ public class Wilfried_Moves : MonoBehaviour {
 	private Quaternion qTo ;
 
 	private bool canMove = true ;
+	private bool isTrap = false ;
 
 	private bool dotIsActive = false ;
 
@@ -106,6 +107,7 @@ public class Wilfried_Moves : MonoBehaviour {
 		RaycastHit backHit ;
 		RaycastHit leftHit ;
 		RaycastHit rightHit ;
+		RaycastHit downHit ;
 
 		//Shot a ray in 4 direction to check if got a wayPoint //
 
@@ -188,6 +190,16 @@ public class Wilfried_Moves : MonoBehaviour {
 		else
 		{
 			haveRightPoint = false ;
+		}
+
+		if(Physics.Raycast(transform.position,-transform.up,out downHit,raycastRange))
+		{
+			if(downHit.transform.gameObject.layer == 10)
+			{
+				//Debug.Log("Hit") ;
+				destination = downHit.transform.position ;
+				//Debug.Log(rightWayPoint) ;
+			}
 		}
 
 		//Raycast from mouse //
@@ -288,6 +300,14 @@ public class Wilfried_Moves : MonoBehaviour {
 		{
 			StartCoroutine(WaitDot(damage)) ;
 			dotIsActive = true ;
+		}
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.CompareTag("Hole"))
+		{
+			isTrap = true ;
 		}
 	}
 
