@@ -11,8 +11,8 @@ public class DragAndDrop : MonoBehaviour , IBeginDragHandler, IDragHandler, IEnd
 
 	public void OnBeginDrag (PointerEventData eventData)
 	  {
-	  	itemBeingDragged = gameObject ;
-	  	startPosition = transform.position ;
+	  //	itemBeingDragged = gameObject ;
+	  //	startPosition = transform.position ;
 	  }
 
 	#endregion
