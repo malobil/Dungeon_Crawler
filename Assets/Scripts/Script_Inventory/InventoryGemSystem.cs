@@ -54,9 +54,9 @@ public class InventoryGemSystem : MonoBehaviour {
     public void RetireGem(BaseEventData data)
     {
     	PointerEventData ped = ( PointerEventData )data;
-        if(ped.button == PointerEventData.InputButton.Right)
+        if(ped.button == PointerEventData.InputButton.Right && !InventoryManagerK.Instance().CheckIfFull())
         {
-            InventoryManagerK.Instance().gemEquip[slotUse] = null ;
+            InventoryManagerK.Instance().RetireGem(slotUse,associateScriptable) ;
             associateScriptable = null ;
             slotUse = 0 ;
             icon.sprite = null ;

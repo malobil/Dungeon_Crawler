@@ -74,19 +74,19 @@ public class InventorySlot : MonoBehaviour {
             {
                 Debug.Log("gem") ;
                 InventoryManagerK.Instance().AddGem(associateScriptable,slot) ;
-                associateScriptable = null ;
                 slot = 0 ;
                 image.sprite = null ;
                 slotIsFree = true ;
+                associateScriptable = null ;
             }
             else if(associateScriptable.healGain > 0)
             {
                 Debug.Log("potion") ;
                 InventoryManagerK.Instance().objectInSlot[slot] = null ;
-                associateScriptable = null ;
                 slot = 0 ;
                 image.sprite = null ;
                 slotIsFree = true ;
+                associateScriptable = null ;
             }
         }
     

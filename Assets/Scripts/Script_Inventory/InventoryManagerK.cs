@@ -17,6 +17,9 @@ public class InventoryManagerK : MonoBehaviour {
 	private int slotOcupied = 0 ;
 	private bool gemInventoryIsFull = false;
 
+	private int slotOcupiedI = 0 ;
+	private bool inventoryIsFull = false ;
+
 	private static InventoryManagerK instance ;
 	public static InventoryManagerK Instance () 
 	{
@@ -47,6 +50,8 @@ public class InventoryManagerK : MonoBehaviour {
 		{
 			DrawRay() ;
 		}
+
+		Debug.Log(inventoryIsFull) ;
 	}
 
 	void DrawRay()
@@ -99,12 +104,35 @@ public class InventoryManagerK : MonoBehaviour {
 			if(gemEquip[i] == null && !alreadyPutGem)
 			{
 				//Debug.Log("Condition") ;
-				gemSlot[i].GetComponent<InventoryGemSystem>().AddGemToSlot(associateScriptable,slotUse) ;
+				gemSlot[i].GetComponent<InventoryGemSystem>().AddGemToSlot(associateScriptable,i) ;
 				gemEquip[i] = associateScriptable ;
 				alreadyPutGem = true ;
 				objectInSlot[slotUse] = null ;
 			}
 		}
+	}
+
+	public void RetireGem(int slotToUse, ScriptableItem script)
+	{
+		gemEquip[slotToUse] = null ;
+
+		alreadyPut = false ;
+
+		//Debug.Log("Input") ;
+
+		for(int i = 0 ; i < slot.Length ; i++)
+		{
+			//Debug.Log("Boucle") ;
+			if(objectInSlot[i] == null && !alreadyPut)
+			{
+				//Debug.Log("Condition") ;
+
+				slot[i].GetComponent<InventorySlot>().AddObjectToSlot(script,i) ;
+				objectInSlot[i] = script ;
+				alreadyPut = true ;
+			}
+		}
+
 	}
 
 	public bool CheckIfGemFull()
@@ -129,5 +157,29 @@ public class InventoryManagerK : MonoBehaviour {
 		}
 
 		return gemInventoryIsFull ;
+	}
+
+		public bool CheckIfFull()
+	{
+		slotOcupiedI = 0 ;
+
+		for(int i = 0 ; i < slot.Length ; i++)
+		{
+			if(objectInSlot[i] != null)
+			{
+				slotOcupied++ ;
+			}
+		}
+
+		if(slotOcupiedI >= objectInSlot.Length)
+		{
+			inventoryIsFull = true ;
+		}
+		else
+		{
+			inventoryIsFull = false ;
+		}
+
+		return inventoryIsFull ;
 	}
 }
