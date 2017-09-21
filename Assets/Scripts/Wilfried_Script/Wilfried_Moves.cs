@@ -12,6 +12,7 @@ public class Wilfried_Moves : MonoBehaviour {
 	public float currentHP ;
 	public float currentAtk = 5 ;
 	public Image hpBar ;
+	public float range ;
 
 	private Vector3 frontWayPoint ; // the front direction point
 	private Vector3 backWayPoint ; // the back direction point
@@ -188,6 +189,28 @@ public class Wilfried_Moves : MonoBehaviour {
 		{
 			haveRightPoint = false ;
 		}
+
+		//Raycast from mouse //
+		RaycastHit mouseHit ;
+
+		if (Input.GetMouseButtonDown(0))
+        {
+          	Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+           	if (Physics.Raycast(raycast,out mouseHit,range))
+			{
+				if (mouseHit.collider.tag == "Portesimple")
+				{
+		   			mouseHit.collider.GetComponent<PortesimpleManager>().ToggleOuverturePorte();
+		   		}
+
+		   		if (mouseHit.collider.tag == "Coffre")
+		   		{
+		   			mouseHit.collider.GetComponent<CoffreManager>().ToggleOuvertureCoffre();
+		   		}
+			}
+			
+        }
 	}
 
 	//Move the player to a destination

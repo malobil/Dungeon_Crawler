@@ -105,8 +105,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549593097109154}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.87, y: 2.31, z: -0.46}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: 0.88, y: 0.5, z: 6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4170451777823930}
@@ -114,7 +114,7 @@ Transform:
   - {fileID: 4466082300579458}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!4 &4170451777823930
 Transform:
   m_ObjectHideFlags: 1
@@ -390,3 +390,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0fd9210651cf34dabf761f238c1707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCoffreAnimator: {fileID: 95036534409933894}
