@@ -15,6 +15,7 @@ public class Bouclevapeur : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		vaporActive = false;
 		vapor = GetComponent<ParticleSystem>() ;
 		cooldownActive = cooldownVapor;
 	}
@@ -47,12 +48,14 @@ public class Bouclevapeur : MonoBehaviour {
 
 		if(vaporActive == false)
 		{
+			GetComponent<AudioSource>().Play();
 			vapor.Stop();
 		}
 		else if( vaporActive == true)
 		{
-
+			
 			vapor.Play();
+			
 		} 
 
 	}
