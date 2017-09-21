@@ -7,7 +7,6 @@ public class MenuManager : MonoBehaviour {
     public string sceneToLoad;
     private bool isPause = false;
     public GameObject menuPause;
-    public GameObject menu;
 
     public void QuitMenuAccueil ()
    	{
@@ -43,7 +42,6 @@ public class MenuManager : MonoBehaviour {
 
     public void quitterPause ()
     {
-        menuPause.SetActive(false);
-        menu.SetActive(true);
+       SceneManager.LoadScene (sceneToLoad);
     }
 }
