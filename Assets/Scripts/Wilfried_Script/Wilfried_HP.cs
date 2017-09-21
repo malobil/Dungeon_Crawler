@@ -36,7 +36,7 @@ public class Wilfried_HP : MonoBehaviour {
             LifeManager();
         }
         if (Input.GetKeyDown("l") & wilfried_current_HP < wilfried_max_HP)
-        {
+        {   //Lorsque joueur appuie sur touche "l", il gagne 10HP
             wilfried_current_HP = wilfried_current_HP + heal_wilfried;
             LifeManager();
         }
