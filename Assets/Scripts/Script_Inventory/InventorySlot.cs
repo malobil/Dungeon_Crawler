@@ -65,16 +65,17 @@ public class InventorySlot : MonoBehaviour {
      	slotIsFree = false ;
      }
 
-     public void UseObject(/*BaseEventData data*/)
+     public void UseObject(BaseEventData data)
      {
-        //if(data.currentInputModule.input.GetMouseButtonDown(1))
-        //{
+        PointerEventData ped = ( PointerEventData )data;
+        if(ped.button == PointerEventData.InputButton.Right)
+        {
             InventoryManagerK.Instance().objectInSlot[slot] = null ;
             associateScriptable = null ;
             slot = 0 ;
             image.sprite = null ;
             slotIsFree = true ;
-        //}
+        }
     
      }
 }
