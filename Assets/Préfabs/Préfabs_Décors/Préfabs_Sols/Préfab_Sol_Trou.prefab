@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4430544235065072}
   - component: {fileID: 65693181967856914}
   - component: {fileID: 114244683267415510}
+  - component: {fileID: 65173636772373906}
   m_Layer: 8
   m_Name: WayPoint
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113404634562876}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 12.58825, y: 29.438, z: 6.798438}
+  m_LocalPosition: {x: 26.448862, y: 25.07607, z: 15.062078}
   m_LocalScale: {x: 1.3329998, y: 1.333, z: 1.3329998}
   m_Children:
   - {fileID: 4430544235065072}
@@ -112,6 +113,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113404634562876}
   m_Mesh: {fileID: 4300000, guid: a993d4f0cbed0fa48bce433367e02954, type: 3}
+--- !u!65 &65173636772373906
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1879674801204614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65693181967856914
 BoxCollider:
   m_ObjectHideFlags: 1
