@@ -9,4 +9,5 @@ public class ScriptableItem : ScriptableObject
 	public string itemName, gemRafinedDescription ;
 	public float atkBoost,hPBoost, healGain ;
 	public bool isGemRafined ;
+	public AudioClip lootSound;
 }
