@@ -7,7 +7,8 @@ public class Tir_Revolver : MonoBehaviour {
 
 	public Image arme ; 
 	public float coolDownMax ;
-	public Button buttonArme; 
+	public Button buttonArme;
+	public ParticleSystem pistolVFX; 
 
 
 	private float currentCoolDown = 0 ;
@@ -37,6 +38,8 @@ public class Tir_Revolver : MonoBehaviour {
 		arme.fillAmount = 0 ;
 		currentCoolDown = 0 ; 
 		buttonArme.interactable =false ;
+		GetComponent<AudioSource>().Play();
+		pistolVFX.Play();
 	}
 
 }
