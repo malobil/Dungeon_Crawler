@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Name: ItemExample
   m_EditorClassIdentifier: 
   inventorySprite: {fileID: 0}
-  itemName: 
+  itemName: pourfendeur d'hymen
   gemRafinedDescription: 
-  atkBoost: 0
+  atkBoost: 25
   hPBoost: 0
   healGain: 0
-  isPotion: 0
-  isGemBrut: 0
   isGemRafined: 0

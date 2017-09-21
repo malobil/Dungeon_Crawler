@@ -11,6 +11,11 @@ public class InventoryManagerK : MonoBehaviour {
 	public ScriptableItem[] gemEquip ;
 	public GameObject[] gemSlot ;
 
+    public GameObject item_Info_Window;
+    public Text item_Name;
+
+    public Text stats_Name;
+
 	private bool alreadyPut = false ;
 	private bool alreadyPutGem = false ;
 
@@ -54,7 +59,31 @@ public class InventoryManagerK : MonoBehaviour {
 		Debug.Log(inventoryIsFull) ;
 	}
 
-	void DrawRay()
+    private void FixedUpdate()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            //Debug.Log("hey") ;
+
+            if (hit.collider.transform.gameObject.layer == 10)
+            {                
+               Open_Description_Window(hit);
+            }
+            else
+            {
+                Close_Description_Window();
+            }
+        }
+        else
+        {
+            Close_Description_Window();
+        }
+    }
+
+    void DrawRay()
 	{
 		RaycastHit hit ;
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition) ;
@@ -65,10 +94,27 @@ public class InventoryManagerK : MonoBehaviour {
 
 			if(hit.collider.transform.gameObject.layer == 10)
 			{
-				AddObjectToInventory(hit) ;
+				AddObjectToInventory(hit) ;   
 			}
 		}
 	}
+
+    void Open_Description_Window(RaycastHit receive_Hit)
+    {
+        ScriptableItem temp = receive_Hit.transform.GetComponent<ItemApplication>().ReturnScriptable();
+        item_Name.text = temp.itemName;
+        if (temp.atkBoost > 0 || temp.hPBoost > 0)
+        {
+            stats_Name.text = "Atk +" + temp.atkBoost + "\nHp +" + temp.hPBoost;
+        }
+        item_Info_Window.SetActive(true);
+        item_Info_Window.transform.position = Input.mousePosition + new Vector3(50, 40, 0);
+    }
+
+    void Close_Description_Window()
+    {
+        item_Info_Window.SetActive(false);
+    }
 
 	void AddObjectToInventory(RaycastHit hitObject)
 	{
