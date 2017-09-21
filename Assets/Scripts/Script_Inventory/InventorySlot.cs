@@ -70,12 +70,31 @@ public class InventorySlot : MonoBehaviour {
         PointerEventData ped = ( PointerEventData )data;
         if(ped.button == PointerEventData.InputButton.Right)
         {
-            InventoryManagerK.Instance().objectInSlot[slot] = null ;
-            associateScriptable = null ;
-            slot = 0 ;
-            image.sprite = null ;
-            slotIsFree = true ;
+            if(associateScriptable.hPBoost > 0 &&  !InventoryManagerK.Instance().CheckIfGemFull() || associateScriptable.atkBoost > 0 &&  !InventoryManagerK.Instance().CheckIfGemFull())
+            {
+                Debug.Log("gem") ;
+                InventoryManagerK.Instance().AddGem(associateScriptable,slot) ;
+                associateScriptable = null ;
+                slot = 0 ;
+                image.sprite = null ;
+                slotIsFree = true ;
+            }
+            else if(associateScriptable.healGain > 0)
+            {
+                Debug.Log("potion") ;
+                InventoryManagerK.Instance().objectInSlot[slot] = null ;
+                associateScriptable = null ;
+                slot = 0 ;
+                image.sprite = null ;
+                slotIsFree = true ;
+            }
         }
     
+     }
+
+     public void OnDrag(BaseEventData data)
+     {
+        PointerEventData ped = ( PointerEventData )data;
+        transform.position = ped.position ;
      }
 }

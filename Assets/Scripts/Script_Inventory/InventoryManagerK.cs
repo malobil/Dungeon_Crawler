@@ -8,7 +8,14 @@ public class InventoryManagerK : MonoBehaviour {
 	public GameObject[] slot ;
 	public ScriptableItem[] objectInSlot ;
 
+	public ScriptableItem[] gemEquip ;
+	public GameObject[] gemSlot ;
+
 	private bool alreadyPut = false ;
+	private bool alreadyPutGem = false ;
+
+	private int slotOcupied = 0 ;
+	private bool gemInventoryIsFull = false;
 
 	private static InventoryManagerK instance ;
 	public static InventoryManagerK Instance () 
@@ -78,5 +85,49 @@ public class InventoryManagerK : MonoBehaviour {
 				alreadyPut = true ;
 			}
 		}
+	}
+
+	public void AddGem(ScriptableItem associateScriptable, int slotUse)
+	{
+		alreadyPutGem = false ;
+
+		//Debug.Log("Input") ;
+
+		for(int i = 0 ; i < gemSlot.Length ; i++)
+		{
+			//Debug.Log("Boucle") ;
+			if(gemEquip[i] == null && !alreadyPutGem)
+			{
+				//Debug.Log("Condition") ;
+				gemSlot[i].GetComponent<InventoryGemSystem>().AddGemToSlot(associateScriptable,slotUse) ;
+				gemEquip[i] = associateScriptable ;
+				alreadyPutGem = true ;
+				objectInSlot[slotUse] = null ;
+			}
+		}
+	}
+
+	public bool CheckIfGemFull()
+	{
+		slotOcupied = 0 ;
+
+		for(int i = 0 ; i < gemEquip.Length ; i++)
+		{
+			if(gemEquip[i] != null)
+			{
+				slotOcupied++ ;
+			}
+		}
+
+		if(slotOcupied >= gemEquip.Length)
+		{
+			gemInventoryIsFull = true ;
+		}
+		else
+		{
+			gemInventoryIsFull = false ;
+		}
+
+		return gemInventoryIsFull ;
 	}
 }
