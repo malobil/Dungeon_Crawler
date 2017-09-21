@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class CoffreManager : MonoBehaviour 
 {
+	public Animator myCoffreAnimator;
 	private bool isOpen = false; 
 
 	public void ToggleOuvertureCoffre () 
 	{
 		if (!isOpen)
 		{
-			GetComponent<Animator>().SetTrigger("OpenCoffre");
+			myCoffreAnimator.SetTrigger("OpenCoffre");
 		}
 		else if (isOpen)
 		{
-			GetComponent<Animator>().SetTrigger("CloseDoor");	
+			myCoffreAnimator.SetTrigger("CloseDoor");	
 		}
 	}
 
 	public void SetOpen (){
 		isOpen = true;
-		GetComponent<Animator>().ResetTrigger("OpenCoffre");
+		myCoffreAnimator.ResetTrigger("OpenCoffre");
 	}
 
 	public void SetClosed (){
 		isOpen = false;
-		GetComponent<Animator>().ResetTrigger("CloseDoor");
+		myCoffreAnimator.ResetTrigger("CloseDoor");
 	}
 }

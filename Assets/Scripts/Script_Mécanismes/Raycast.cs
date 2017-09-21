@@ -1,8 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Raycast_Pistolet : MonoBehaviour {
+public class Raycast : MonoBehaviour {
 
 	public float range = 100f;
 
