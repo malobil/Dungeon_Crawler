@@ -46,12 +46,12 @@ public class InventorySlot : MonoBehaviour {
         image.sprite = associateScriptable.inventorySprite ;
         nameText.text = associateScriptable.itemName ;
 
-        if(associateScriptable.isPotion)
+        if(associateScriptable.healGain > 0)
         {
             statText.text = "Soin :" + associateScriptable.healGain ;
         }
 
-        if(associateScriptable.isGemBrut)
+        if(associateScriptable.atkBoost > 0)
         {
             statText.text = "Atk + " + associateScriptable.atkBoost.ToString("") + "\nVie + " + associateScriptable.hPBoost.ToString("") ;
         }

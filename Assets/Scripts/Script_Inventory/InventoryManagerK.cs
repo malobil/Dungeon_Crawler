@@ -7,7 +7,6 @@ public class InventoryManagerK : MonoBehaviour {
 
 	public GameObject[] slot ;
 	public ScriptableItem[] objectInSlot ;
-	public LayerMask objectLayer ;
 
 	private bool alreadyPut = false ;
 

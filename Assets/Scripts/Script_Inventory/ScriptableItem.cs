@@ -8,5 +8,5 @@ public class ScriptableItem : ScriptableObject
 	public Sprite inventorySprite ;
 	public string itemName, gemRafinedDescription ;
 	public float atkBoost,hPBoost, healGain ;
-	public bool isPotion,isGemBrut, isGemRafined ;
+	public bool isGemRafined ;
 }
