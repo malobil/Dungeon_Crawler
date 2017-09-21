@@ -52,7 +52,7 @@ public class InventoryManagerK : MonoBehaviour {
 		{
 			//Debug.Log("hey") ;
 
-			if(hit.collider.transform.gameObject.layer == 8)
+			if(hit.collider.transform.gameObject.layer == 10)
 			{
 				AddObjectToInventory(hit) ;
 			}
