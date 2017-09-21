@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4127959711108060}
   - component: {fileID: 198966309741286556}
   - component: {fileID: 199358378125674470}
+  - component: {fileID: 114433084258658192}
   m_Layer: 2
   m_Name: Vapor_VFX
   m_TagString: Untagged
@@ -36,7 +37,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4135330652112276}
-  - component: {fileID: 114416179789523758}
   m_Layer: 2
   m_Name: Vapor_Smoke_Horizontal
   m_TagString: Untagged
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341039235591152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.452129, y: 0.4400854, z: -6.569667}
+  m_LocalPosition: {x: -2.74, y: 29.12, z: 1.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4127959711108060}
@@ -154,20 +154,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.162635, y: 0.97682047, z: 3.9118307}
   m_Center: {x: -0.21482933, y: 0.030823825, z: 1.9559084}
---- !u!114 &114416179789523758
+--- !u!114 &114433084258658192
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341039235591152}
+  m_GameObject: {fileID: 1339820713120100}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c41a0e1eebb4ba4aaf7d42e6c86bfd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vapor: {fileID: 198966309741286556}
   cooldownVapor: 4
-  Damage: {fileID: 65236359503229756}
 --- !u!198 &198966309741286556
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -227,7 +225,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1469532850
+  randomSeed: 1674009520
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -317,7 +315,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.066}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.116}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -2491,9 +2489,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -2633,8 +2631,8 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
-    maxCollisionShapes: 256
+      m_Bits: 512
+    maxCollisionShapes: 0
     quality: 0
     voxelSize: 0.5
     collisionMessages: 0

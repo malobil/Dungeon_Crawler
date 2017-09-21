@@ -236,7 +236,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1656292705
+  randomSeed: 305946125
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3654,57 +3654,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 198966309741286556, guid: fc46ca59e2492214690b90f7a9cd3ade,
-        type: 2}
-      propertyPath: randomSeed
-      value: 1674009520
-      objectReference: {fileID: 0}
-    - target: {fileID: 198966309741286556, guid: fc46ca59e2492214690b90f7a9cd3ade,
-        type: 2}
-      propertyPath: TriggerModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198966309741286556, guid: fc46ca59e2492214690b90f7a9cd3ade,
-        type: 2}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198966309741286556, guid: fc46ca59e2492214690b90f7a9cd3ade,
-        type: 2}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198966309741286556, guid: fc46ca59e2492214690b90f7a9cd3ade,
-        type: 2}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 198966309741286556, guid: fc46ca59e2492214690b90f7a9cd3ade,
-        type: 2}
-      propertyPath: CollisionModule.maxCollisionShapes
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114416179789523758, guid: fc46ca59e2492214690b90f7a9cd3ade, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc46ca59e2492214690b90f7a9cd3ade, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &715403199 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1339820713120100, guid: fc46ca59e2492214690b90f7a9cd3ade,
-    type: 2}
-  m_PrefabInternal: {fileID: 715403198}
---- !u!114 &715403201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 715403199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c41a0e1eebb4ba4aaf7d42e6c86bfd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownVapor: 4
 --- !u!1 &730225045
 GameObject:
   m_ObjectHideFlags: 0
