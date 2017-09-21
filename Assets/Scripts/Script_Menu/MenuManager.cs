@@ -30,17 +30,17 @@ public class MenuManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isPause = !isPause;
-            menuPause.SetActive(isPause);
+            Continuer();
         } 
 	}
 
-    public void continuer ()
+    public void Continuer ()
     {
-        menuPause.SetActive(false);
+        isPause = !isPause;
+        menuPause.SetActive(isPause);
     }
 
-    public void quitterPause ()
+    public void QuitterPause ()
     {
        SceneManager.LoadScene (sceneToLoad);
     }

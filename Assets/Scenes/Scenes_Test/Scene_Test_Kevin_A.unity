@@ -8060,7 +8060,7 @@ Prefab:
     - target: {fileID: 114431043213047386, guid: 63e0b7a813918174185be536ad7605f5,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: continuer
+      value: Continuer
       objectReference: {fileID: 0}
     - target: {fileID: 114431043213047386, guid: 63e0b7a813918174185be536ad7605f5,
         type: 2}
@@ -8085,12 +8085,16 @@ Prefab:
     - target: {fileID: 114682163223558502, guid: 63e0b7a813918174185be536ad7605f5,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: quitterPause
+      value: QuitterPause
       objectReference: {fileID: 0}
     - target: {fileID: 114682163223558502, guid: 63e0b7a813918174185be536ad7605f5,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416221546118314, guid: 63e0b7a813918174185be536ad7605f5, type: 2}
+      propertyPath: m_Name
+      value: quitter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63e0b7a813918174185be536ad7605f5, type: 2}
