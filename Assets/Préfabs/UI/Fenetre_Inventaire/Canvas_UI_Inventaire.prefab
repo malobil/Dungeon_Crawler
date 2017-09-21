@@ -1345,7 +1345,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114800266786617918}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1580,7 +1580,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114768784683831628}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1704,7 +1704,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114688589612522512}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2058,7 +2058,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114042264294560454}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2445,7 +2445,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114131359191604374}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2542,7 +2542,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114331605966534476}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2999,7 +2999,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114569426039790390}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3215,7 +3215,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114033573360923690}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3306,7 +3306,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114598175499631930}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3629,7 +3629,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114773168211541372}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3817,7 +3817,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114659406569202056}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3911,7 +3911,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114814559064609488}
           m_MethodName: UseObject
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4053,17 +4053,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slot:
   - {fileID: 1846556440803066}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1449532533742378}
+  - {fileID: 1213376892903806}
+  - {fileID: 1128828180262032}
+  - {fileID: 1443198796682414}
+  - {fileID: 1394030477731648}
+  - {fileID: 1782572562655630}
+  - {fileID: 1036699950281508}
+  - {fileID: 1019812525892938}
+  - {fileID: 1985037867464296}
+  - {fileID: 1578019149569892}
+  - {fileID: 1224603909405836}
   objectInSlot:
   - {fileID: 0}
   - {fileID: 0}
