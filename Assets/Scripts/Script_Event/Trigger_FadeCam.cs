@@ -24,7 +24,7 @@ public class Trigger_FadeCam : MonoBehaviour {
 			c.a -= Time.deltaTime * fadeSpeed ;
 			classicScreen.color = c;
 		}
-		else if (screenChange = false)
+		else if (screenChange == false)
 		{
 			c.a = 0f;
 			c.a += Time.deltaTime * fadeSpeed ;
