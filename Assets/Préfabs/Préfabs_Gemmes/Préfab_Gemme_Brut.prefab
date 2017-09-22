@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4825553060796560}
   - component: {fileID: 198165116075793690}
   - component: {fileID: 199000139166947640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VFX_Surbrillance_Gemme_Brut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33135475530689752}
   - component: {fileID: 23890353828094772}
   - component: {fileID: 95604046078745076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "Pr\xE9fab_Gemme_Brut"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
