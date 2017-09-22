@@ -307,14 +307,6 @@ public class Wilfried_Moves : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
-		if(other.CompareTag("Hole"))
-		{
-			isTrap = true ;
-		}
-	}
-
 	//Atk functions //
 	public void UpAtk(float numberToAdd)
 	{
