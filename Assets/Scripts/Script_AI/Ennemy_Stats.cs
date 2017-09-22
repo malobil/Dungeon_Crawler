@@ -10,7 +10,6 @@ public class Ennemy_Stats : MonoBehaviour {
     public float ennemy_takes_damages_amount;
     public float ennemy_heals_amount;
 
-    public GameObject ennemy;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +27,7 @@ public class Ennemy_Stats : MonoBehaviour {
 
         if(ennemy_current_HP <= 0)
         {
-            Destroy(ennemy);
+   
         }
     }
 
