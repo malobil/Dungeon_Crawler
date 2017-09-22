@@ -8,6 +8,7 @@ TagManager:
   - Test boutton
   - Coffre
   - Portesimple
+  - Enemy
   layers:
   - Default
   - TransparentFX
