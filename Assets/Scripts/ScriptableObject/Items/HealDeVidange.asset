@@ -18,3 +18,5 @@ MonoBehaviour:
   hPBoost: 0
   healGain: 50
   isGemRafined: 0
+  lootSound: {fileID: 0}
+  itemPrefab: {fileID: 1795919351355150, guid: f96e351ab630d4a48b941461967cf92c, type: 2}

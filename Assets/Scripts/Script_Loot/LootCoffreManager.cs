@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LootCoffreManager : MonoBehaviour {
 
-	public Transform coffrePosition;
+	public Transform spawnPosition;
 	private ScriptableItem itemToLoot;
 	public ItemInCoffreManager associateListScriptable;
 
@@ -12,7 +12,7 @@ public class LootCoffreManager : MonoBehaviour {
 	void Start () {
 		int temp = Random.Range(0,associateListScriptable.listOfItem.Length);
 		itemToLoot = associateListScriptable.listOfItem[temp];
-		Instantiate (itemToLoot.itemPrefab, coffrePosition.position + Vector3.up, Quaternion.identity);
+		Instantiate (itemToLoot.itemPrefab, spawnPosition.position, spawnPosition.rotation, spawnPosition);
 	}
 	
 	// Update is called once per frame
