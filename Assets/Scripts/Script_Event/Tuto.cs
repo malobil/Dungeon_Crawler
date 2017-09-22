@@ -12,6 +12,7 @@ public class Tuto : MonoBehaviour {
    	{
    		if (isTutoDone== true  && other.CompareTag("Player"))
    		{
+        GetComponent<AudioSource>().Play();
         	tuto.SetActive (true);
         }
    	}
@@ -19,6 +20,7 @@ public class Tuto : MonoBehaviour {
    	{
    		if (other.CompareTag("Player"))
    		{
+        GetComponent<AudioSource>().Play();
         	tuto.SetActive (false);
         	isTutoDone = false; 
         }
