@@ -12,7 +12,7 @@ public class LootCoffreManager : MonoBehaviour {
 	void Start () {
 		int temp = Random.Range(0,associateListScriptable.listOfItem.Length);
 		itemToLoot = associateListScriptable.listOfItem[temp];
-		Instantiate (itemToLoot.itemPrefab, coffrePosition.position, Quaternion.identity);
+		Instantiate (itemToLoot.itemPrefab, coffrePosition.position + Vector3.up, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
