@@ -7390,6 +7390,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c1b975f9ac7414488fc4b672565f64c, type: 2}
   m_IsPrefabParent: 0
+--- !u!198 &726425495 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198436873524196422, guid: 29b27cda7dbfcd54580225decf4c11f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1627620475}
 --- !u!4 &729574926 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4986962595101398, guid: af3fa35547193e3409546485991cf967,
@@ -19080,8 +19085,7 @@ Prefab:
         type: 2}
       propertyPath: pistolVFX
       value: 
-      objectReference: {fileID: 198485175425773082, guid: 74ad609244a1021418f5e4c5877d9b5e,
-        type: 2}
+      objectReference: {fileID: 726425495}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bfd7c3ee55a5eda46ad3f0ba87f1cf13, type: 2}
   m_IsPrefabParent: 0
