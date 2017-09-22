@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1979353905262230
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +104,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "I pour afficher l\u2019inventaire "
+  m_Text: "Cliquer sur l'ic\xF4ne en dessous de l'ic\xF4ne du joueur OU I pour afficher
+    l\u2019inventaire "
 --- !u!222 &222168344384209274
 CanvasRenderer:
   m_ObjectHideFlags: 1
