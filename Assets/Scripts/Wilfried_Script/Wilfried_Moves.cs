@@ -117,7 +117,7 @@ public class Wilfried_Moves : MonoBehaviour {
 			//Debug.Log(frontHit.transform.gameObject.layer) ;
 			if(frontHit.transform.gameObject.layer == 8)
 			{
-				Debug.Log(frontHit.collider.transform.gameObject.name) ;
+				// Debug.Log(frontHit.collider.transform.gameObject.name) ;
 				frontWayPoint = frontHit.transform.position ;
 				haveFrontPoint = true ;
 				//Debug.Log(frontWayPoint) ;

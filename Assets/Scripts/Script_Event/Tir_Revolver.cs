@@ -9,7 +9,7 @@ public class Tir_Revolver : MonoBehaviour {
 	public float coolDownMax ;
 	public Button buttonArme;
 	public ParticleSystem pistolVFX; 
-
+	public LayerMask ennemy = -1 ;
 	public float damage = 10f ; 
 	public float range = 100f;
 
@@ -46,13 +46,16 @@ public class Tir_Revolver : MonoBehaviour {
 		pistolVFX.Play();
 	}
 
-	public void tir ()
+	public void Tir ()
 	{
-		RaycastHit hit;
-		if (Physics.Raycast(wilfredCam.transform.position, wilfredCam.transform.forward, out hit, range))
-		{
-			Debug.Log(hit.transform.name);
-		}
+	
+		
+			RaycastHit hit;
+			if (Physics.Raycast(wilfredCam.transform.position, wilfredCam.transform.forward, out hit, range, ennemy.value))
+			{
+				Debug.Log(hit.transform.name);
+			}
+		
 		
 	}
 
