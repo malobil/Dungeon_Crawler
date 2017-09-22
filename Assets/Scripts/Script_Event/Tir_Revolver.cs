@@ -12,6 +12,7 @@ public class Tir_Revolver : MonoBehaviour {
 	public LayerMask ennemy = -1 ;
 	public float damage = 10f ; 
 	public float range = 100f;
+	public ParticleSystem pistolShard;
 
 	public Camera wilfredCam ; 
 
@@ -53,6 +54,9 @@ public class Tir_Revolver : MonoBehaviour {
 			RaycastHit hit;
 			if (Physics.Raycast(wilfredCam.transform.position, wilfredCam.transform.forward, out hit, range, ennemy.value))
 			{
+
+				Instantiate (pistolShard,hit.point,Quaternion.identity);
+
 				TargetDamage target =hit.transform.GetComponent<TargetDamage>();
 				Debug.Log(hit.transform.name);
 				if (target != null)
