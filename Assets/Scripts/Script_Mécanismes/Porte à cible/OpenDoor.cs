@@ -17,7 +17,7 @@ void FixedUpdate ()
 	        {
 	        	if (hit.collider.tag == "Test boutton")
 				{
-			   		hit.collider.GetComponent<PorteManager>().ToggleOuverturePorte();
+			   		hit.collider.GetComponent<PorteManager>().OuverturePorte();
 				}
 			}
 		}
