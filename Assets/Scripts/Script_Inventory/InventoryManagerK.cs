@@ -262,7 +262,7 @@ public class InventoryManagerK : MonoBehaviour {
 		return inventoryIsFull ;
 	}
 
-	void InventoryState()
+	public void InventoryState()
 	{
 		inventoryState = !inventoryState ;
 		inventory.SetActive(inventoryState) ;
