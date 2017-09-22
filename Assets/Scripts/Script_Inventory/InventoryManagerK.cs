@@ -26,6 +26,8 @@ public class InventoryManagerK : MonoBehaviour {
 	private int slotOcupiedI = 0 ;
 	private bool inventoryIsFull = false ;
 
+	private GameObject vfxRay;
+
 	public GameObject inventory ;
 	private bool inventoryState = false;
 
@@ -118,11 +120,14 @@ public class InventoryManagerK : MonoBehaviour {
         }
         item_Info_Window.SetActive(true);
         item_Info_Window.transform.position = Input.mousePosition + new Vector3(50, 40, 0);
+        vfxRay = receive_Hit.transform.GetChild(0).gameObject;
+        vfxRay.SetActive(true);
     }
 
     void Close_Description_Window()
     {
         item_Info_Window.SetActive(false);
+        vfxRay.SetActive(false);
     }
 
 	void AddObjectToInventory(RaycastHit hitObject)
