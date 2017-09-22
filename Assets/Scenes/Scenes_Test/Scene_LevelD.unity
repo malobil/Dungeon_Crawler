@@ -9613,14 +9613,6 @@ Prefab:
       propertyPath: m_Name
       value: "Pr\xE9fab_LampaUIL (1)"
       objectReference: {fileID: 0}
-    - target: {fileID: 4346599631729518, guid: 6168a03ee8fd8694989f3b3c17c6dfff, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4346599631729518, guid: 6168a03ee8fd8694989f3b3c17c6dfff, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90.661
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6168a03ee8fd8694989f3b3c17c6dfff, type: 2}
   m_IsPrefabParent: 0
