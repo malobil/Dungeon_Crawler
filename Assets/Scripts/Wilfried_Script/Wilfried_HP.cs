@@ -32,7 +32,7 @@ public class Wilfried_HP : MonoBehaviour {
        // hp.text = wilfried_current_HP.ToString() + "/" + wilfried_max_HP.ToString();
         if (Input.GetKeyDown("m") & wilfried_current_HP > wilfried_min_HP)
         {   //Lorsque joueur appuie sur la touche "m", il perd 10HP
-
+        	GetComponent<AudioSource>().Play();
             wilfried_current_HP = wilfried_current_HP - damages_to_wilfried;
             LifeManager();
         }

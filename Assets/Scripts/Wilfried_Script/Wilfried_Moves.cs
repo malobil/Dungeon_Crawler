@@ -283,6 +283,7 @@ public class Wilfried_Moves : MonoBehaviour {
 
 	public void TakeInstantDamage(float damage)
 	{
+		GetComponent<AudioSource>().Play();
 		currentHP -= damage ;
 
 		if(hpBar != null)
