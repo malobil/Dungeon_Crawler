@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33660408775638132}
   - component: {fileID: 23386394570050272}
   - component: {fileID: 95926176367422456}
+  - component: {fileID: 114584366251699816}
+  - component: {fileID: 65781011273421362}
   m_Layer: 0
   m_Name: "Mod\xE9_Potions_3"
   m_TagString: Untagged
@@ -117,6 +119,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322039351378400}
   m_Mesh: {fileID: 4300000, guid: 26d423e4e72333c4982b17506d604a7c, type: 3}
+--- !u!65 &65781011273421362
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1322039351378400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45886856, y: 0.52081144, z: 0.8303051}
+  m_Center: {x: -0.000000014901161, y: -0.0020145332, z: -0.2590637}
 --- !u!95 &95926176367422456
 Animator:
   serializedVersion: 3
@@ -134,6 +148,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114584366251699816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1322039351378400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4fb6fbe380ff042ab8edab8a3c587a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse_Layout: {fileID: 0}
+  item_Name: {fileID: 0}
+  associateScriptable: {fileID: 11400000, guid: dc3122a4d075e734da68f627224af11c,
+    type: 2}
 --- !u!198 &198844543578548634
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 33551730973420134}
   - component: {fileID: 23794692187271522}
   - component: {fileID: 95816073793872034}
+  - component: {fileID: 114793799239105376}
+  - component: {fileID: 65397578525113842}
   m_Layer: 0
   m_Name: "Pr\xE9fab_Gemme_Brut_Verte"
   m_TagString: Untagged
@@ -113,6 +115,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1663457533255582}
   m_Mesh: {fileID: 4300000, guid: 3b843420ac7869d45b20b53a6fa8c3d3, type: 3}
+--- !u!65 &65397578525113842
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663457533255582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.51743835, y: 0.59748644, z: 0.46904194}
+  m_Center: {x: -0.0862397, y: 0, z: 0.23452097}
 --- !u!95 &95816073793872034
 Animator:
   serializedVersion: 3
@@ -130,6 +144,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114793799239105376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663457533255582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4fb6fbe380ff042ab8edab8a3c587a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse_Layout: {fileID: 0}
+  item_Name: {fileID: 0}
+  associateScriptable: {fileID: 11400000, guid: dc3122a4d075e734da68f627224af11c,
+    type: 2}
 --- !u!198 &198679790242077124
 ParticleSystem:
   m_ObjectHideFlags: 1

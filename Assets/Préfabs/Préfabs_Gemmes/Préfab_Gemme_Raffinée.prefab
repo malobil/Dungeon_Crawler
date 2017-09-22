@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33923256855853222}
   - component: {fileID: 23893337360351174}
   - component: {fileID: 95542178314869378}
+  - component: {fileID: 114177879854633868}
+  - component: {fileID: 65902952597305984}
   m_Layer: 0
   m_Name: "Pr\xE9fab_Gemme_Raffin\xE9e"
   m_TagString: Untagged
@@ -113,6 +115,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1172269444420844}
   m_Mesh: {fileID: 4300000, guid: bd61bf26a45afb4499c95f49dea07e83, type: 3}
+--- !u!65 &65902952597305984
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172269444420844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.68360597, y: 0.6847622, z: 0.79069525}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95542178314869378
 Animator:
   serializedVersion: 3
@@ -130,6 +144,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114177879854633868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172269444420844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4fb6fbe380ff042ab8edab8a3c587a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse_Layout: {fileID: 0}
+  item_Name: {fileID: 0}
+  associateScriptable: {fileID: 11400000, guid: dc3122a4d075e734da68f627224af11c,
+    type: 2}
 --- !u!198 &198624079018367498
 ParticleSystem:
   m_ObjectHideFlags: 1
