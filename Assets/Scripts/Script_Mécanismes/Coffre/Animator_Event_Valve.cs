@@ -24,4 +24,8 @@ public class Animator_Event_Valve : MonoBehaviour {
 	{
 		myCoffreManager.SetClosed();
 	}
+	public void OpenSoundMessage()
+	{
+		GetComponent<AudioSource>().Play();
+	}
 }
