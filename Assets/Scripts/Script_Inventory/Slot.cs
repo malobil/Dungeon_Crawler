@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,7 +17,8 @@ public class Slot : MonoBehaviour, IDropHandler {
 	{
 		if(!item)
 		{		
-			//DragHandeler.itemBeingDragged.transform.SetParent (transform) ;
+			DragAndDrop.itemBeingDragged.transform.SetParent (transform) ;
+			ExecuteEvents.ExecuteHierarchy<IHaveChanged>(gameObject, null, (x,y) => x.HasChanged ());
 		}
 	}
 	# endregion
