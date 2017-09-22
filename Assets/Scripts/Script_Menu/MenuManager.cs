@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
-    public string sceneToLoad;
+    public string Scene_LevelD;
     private bool isPause = false;
     public GameObject menuPause;
 
@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour {
 
 	public void PlayMenuAccueil ()
    	{
-        SceneManager.LoadScene (sceneToLoad);
+        SceneManager.LoadScene (Scene_LevelD);
    	}
 
 
@@ -42,6 +42,6 @@ public class MenuManager : MonoBehaviour {
 
     public void QuitterPause ()
     {
-       SceneManager.LoadScene (sceneToLoad);
+       SceneManager.LoadScene (Scene_LevelD);
     }
 }
