@@ -30,6 +30,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: 435c6f36a06a76542af10093974cbb4a, type: 3}
     - time: 0.16666667
       value: {fileID: 21300000, guid: 78c0589ffd4e82547866fdada7de4532, type: 3}
+    - time: 0.18333334
+      value: {fileID: 0}
     attribute: m_Sprite
     path: Main Camera/CanneEpee
     classID: 212
@@ -55,12 +57,13 @@ AnimationClip:
     - {fileID: 21300000, guid: b5db570e31bff1b42b7a9666fc677b35, type: 3}
     - {fileID: 21300000, guid: 435c6f36a06a76542af10093974cbb4a, type: 3}
     - {fileID: 21300000, guid: 78c0589ffd4e82547866fdada7de4532, type: 3}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.18333334
+    m_StopTime: 0.2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
