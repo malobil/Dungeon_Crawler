@@ -167,6 +167,9 @@ GameObject:
   - component: {fileID: 95280569867770838}
   - component: {fileID: 114929809233921044}
   - component: {fileID: 82383829602095920}
+  - component: {fileID: 114113242562545834}
+  - component: {fileID: 114488338171375280}
+  - component: {fileID: 114028182148148380}
   m_Layer: 0
   m_Name: "Pr\xE9fab_Porte_Cul_De_Sac_A_Cible"
   m_TagString: Test boutton
@@ -1427,6 +1430,43 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114028182148148380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452537730446316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa72deeec46e406498491c326d20d058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDoorManager: {fileID: 0}
+  myDoorManager2: {fileID: 0}
+--- !u!114 &114113242562545834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452537730446316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a181fd11a5c9b445b78f403c84b5f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 50
+--- !u!114 &114488338171375280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452537730446316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0f179048c97ab46b5c5873137e769f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myLittleDoorPoney: {fileID: 0}
 --- !u!114 &114730082065521618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1438,6 +1478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd34943bc50ea44c942c195a78c87ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoints: []
 --- !u!114 &114878101329025280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1446,7 +1487,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981533590720316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2758baea20d082e4f9b4c3c4f7908e92, type: 3}
+  m_Script: {fileID: 11500000, guid: df0f179048c97ab46b5c5873137e769f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myLittleDoorPoney: {fileID: 95280569867770838}
