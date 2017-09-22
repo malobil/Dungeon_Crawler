@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Animator_Event : MonoBehaviour {
 	public PortesimpleManager myDoorManager;
+	public PortesimpleManager myDoorManager2;
 
 	// Use this for initialization
 	void Start () {
@@ -19,10 +20,12 @@ public class Animator_Event : MonoBehaviour {
 	{
 
 		myDoorManager.SetOpen();
+		myDoorManager2.SetOpen();
 	}
 	public void SendCloseMessage()
 	{
 		myDoorManager.SetClosed();
+		myDoorManager2.SetClosed();
 	}
 	public void OpenSoundPlay(){
 		GetComponent<AudioSource>().Play();
