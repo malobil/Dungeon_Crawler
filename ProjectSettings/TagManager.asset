@@ -20,7 +20,7 @@ TagManager:
   - 
   - WaypointLayer
   - PlayerLayer
-  - TrapWayPointLayer
+  - Objet
   - EnnemisLayer
   - 
   - 
