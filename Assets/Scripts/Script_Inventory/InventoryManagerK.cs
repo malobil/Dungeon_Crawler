@@ -15,7 +15,6 @@ public class InventoryManagerK : MonoBehaviour {
     public Text item_Name;
 
     public Text stats_Name;
-    public AudioSource itemSound;
 
 	private bool alreadyPut = false ;
 	private bool alreadyPutGem = false ;
@@ -175,8 +174,6 @@ public class InventoryManagerK : MonoBehaviour {
 				gemEquip[i] = associateScriptable ;
 				alreadyPutGem = true ;
 				objectInSlot[slotUse] = null ;
-				itemSound.clip = associateScriptable.lootSound;
-				itemSound.Play();
 			}
 		}
 	}

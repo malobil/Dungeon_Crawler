@@ -34,6 +34,9 @@ public class Wilfried_Moves : MonoBehaviour {
 
 	private bool dotIsActive = false ;
 
+	private Vector3 respawnPoint;
+	private float respawnLife;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -352,5 +355,19 @@ public class Wilfried_Moves : MonoBehaviour {
 		yield return new WaitForSeconds(2) ;
 		dotIsActive = false ;
 	}
+		public void SetRespawn()
+	{
+		respawnPoint = transform.position;
+		respawnLife  = currentHP;
+
+	}
+
+	public void Respawn ()
+	{
+		destination = respawnPoint;
+		transform.position = respawnPoint;
+		currentHP = respawnLife;
+	}
+
 
 }
