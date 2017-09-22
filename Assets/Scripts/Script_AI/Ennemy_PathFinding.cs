@@ -63,6 +63,7 @@ public class Ennemy_PathFinding : MonoBehaviour {
 		if(currentAttackCd <= 0 && nearPlayer)
 		{
 			animatorComponent.SetTrigger("Attack") ;
+			DoDamage() ;
 			currentAttackCd = atackSpeed ;
 			transform.LookAt(player.transform) ;
 		}
@@ -83,7 +84,10 @@ public class Ennemy_PathFinding : MonoBehaviour {
 			animatorComponent.SetTrigger("StopMove") ;
 		}
 	}
-
+	void DoDamage()
+	{
+		player.GetComponent<Wilfried_Moves>().TakeInstantDamage(damage) ;
+	}
 	void PathFinding()
 	{	
 		nearPlayer = false ;
