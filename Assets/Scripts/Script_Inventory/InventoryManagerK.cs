@@ -26,6 +26,9 @@ public class InventoryManagerK : MonoBehaviour {
 	private int slotOcupiedI = 0 ;
 	private bool inventoryIsFull = false ;
 
+	public GameObject inventory ;
+	private bool inventoryState = false;
+
 	private static InventoryManagerK instance ;
 	public static InventoryManagerK Instance () 
 	{
@@ -52,12 +55,17 @@ public class InventoryManagerK : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if(Input.GetKeyDown("i"))
+		{
+			InventoryState() ;
+		}
+
 		if(Input.GetButtonDown("Fire1"))
 		{
 			DrawRay() ;
 		}
 
-		Debug.Log(inventoryIsFull) ;
+		//Debug.Log(inventoryIsFull) ;
 	}
 
     private void FixedUpdate()
@@ -245,4 +253,10 @@ public class InventoryManagerK : MonoBehaviour {
 
 		return inventoryIsFull ;
 	}
+
+	void InventoryState()
+	{
+		inventoryState = !inventoryState ;
+		inventory.SetActive(inventoryState) ;
+	}	
 }
