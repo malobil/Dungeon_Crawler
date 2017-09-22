@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouse_Layout: {fileID: 0}
   item_Name: {fileID: 0}
-  associateScriptable: {fileID: 11400000, guid: dc3122a4d075e734da68f627224af11c,
+  associateScriptable: {fileID: 11400000, guid: 636b5addfb23aae4da1c800bcd44807b,
     type: 2}
 --- !u!198 &198679790242077124
 ParticleSystem:
