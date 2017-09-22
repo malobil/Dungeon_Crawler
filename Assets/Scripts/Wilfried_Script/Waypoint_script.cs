@@ -94,18 +94,16 @@ public class Waypoint_script : MonoBehaviour
 		if(other.CompareTag("Player"))
 		{
 			isOcupiedByPlayer = true ;
-			gameObject.SetActive(false) ;
+			//gameObject.SetActive(false) ;
 		}
 		
 	}
 
 	void OnTriggerExit(Collider other)
 	{
-		if(other.CompareTag("Player"))
-		{
+		
 			isOcupiedByPlayer = false ;
 			gameObject.SetActive(true) ;
-		}
 	}
 
 }

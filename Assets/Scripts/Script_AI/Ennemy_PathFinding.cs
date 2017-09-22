@@ -5,6 +5,8 @@ using UnityEngine;
 public class Ennemy_PathFinding : MonoBehaviour {
 
 	public float movementSpeed = 5 ;
+	public float moveCooldown ;
+	private float currentMoveCoolDown ;
 
 	private bool haveFindPlayer = false ;
 	private int turn = 0 ;
@@ -22,9 +24,12 @@ public class Ennemy_PathFinding : MonoBehaviour {
 	private GameObject player ;
 
 	public float raycastRange = 1 ;
+
+	private bool nearPlayer = false ;
 	// Use this for initialization
 	void Start () 
-	{
+	{	
+		currentMoveCoolDown = moveCooldown ;
 		player = GameObject.FindGameObjectWithTag("Player") ;
 		CheckNearWaypoint() ;
 	}
@@ -32,10 +37,20 @@ public class Ennemy_PathFinding : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown("f"))
+		if(currentMoveCoolDown > 0)
 		{
+			currentMoveCoolDown -= Time.deltaTime ;
+		}
+		if(currentMoveCoolDown <= 0)
+		{
+			currentMoveCoolDown = moveCooldown ;
 			PathFinding() ;
 		}
+
+		/*if(Input.GetKeyDown("f"))
+		{
+			PathFinding() ;
+		}*/
 
 		if(distanceToGo != null && transform.position != distanceToGo.transform.position)
 		{
@@ -90,23 +105,39 @@ public class Ennemy_PathFinding : MonoBehaviour {
 		}
 
 		Debug.Log("near" + nearestWp) ;
+
+			if(!nearPlayer)
+			{	
+				if(nearestWp == tempRigthDistance && rightWayPoint != null)
+				{
+					if(!rightWayPoint.GetComponent<Waypoint_script>().ReturnIsOcupiedByPlayer())
+					{
+						distanceToGo = rightWayPoint ;
+					}
+				}
+				if(nearestWp == tempFrontDistance && frontWayPoint!=null)
+				{
+					if(!frontWayPoint.GetComponent<Waypoint_script>().ReturnIsOcupiedByPlayer())
+					{
+						distanceToGo = frontWayPoint ;
+					}	
+				}
+				if(nearestWp == tempLeftDistance && leftWayPoint!=null)
+				{
+					if(!leftWayPoint.GetComponent<Waypoint_script>().ReturnIsOcupiedByPlayer())
+					{
+						distanceToGo = leftWayPoint ;
+					}
+				}
+				if(nearestWp == tempBackDistance && backWayPoint !=null)
+				{	
+					if(!backWayPoint.GetComponent<Waypoint_script>().ReturnIsOcupiedByPlayer())
+					{
+						distanceToGo = backWayPoint ;
+					}
+				}
+			}
 		
-		if(nearestWp == tempRigthDistance)
-		{
-			distanceToGo = rightWayPoint ;
-		}
-		if(nearestWp == tempFrontDistance)
-		{
-			distanceToGo = frontWayPoint ;	
-		}
-		if(nearestWp == tempLeftDistance)
-		{
-			distanceToGo = leftWayPoint ;
-		}
-		if(nearestWp == tempBackDistance)
-		{
-			distanceToGo = backWayPoint ;
-		}
 
 		//Debug.Log("distance" + distanceToGo) ;	
 	}
@@ -127,11 +158,17 @@ public class Ennemy_PathFinding : MonoBehaviour {
 			{
 				//Debug.Log("Hit") ;
 				frontWayPoint = frontHit.transform.gameObject ;
+				nearPlayer = false ;
 				//Debug.Log(frontWayPoint) ;
+			}
+			else if(frontHit.transform.gameObject.layer == 9)
+			{
+				nearPlayer = true ;
 			}
 			else
 			{
 				frontWayPoint = null ;
+				nearPlayer = false ;
 			}
 		}
 		else
@@ -146,11 +183,17 @@ public class Ennemy_PathFinding : MonoBehaviour {
 			{
 				//Debug.Log("Hit") ;
 				backWayPoint = backHit.transform.gameObject ;
+				nearPlayer = false ;
 				//Debug.Log(backWayPoint) ;
+			}
+			else if(backHit.transform.gameObject.layer == 9)
+			{
+				nearPlayer = true ;
 			}
 			else
 			{
-				backWayPoint = null ;	
+				backWayPoint = null ;
+				nearPlayer = false ;
 			}
 		}
 		else
@@ -167,9 +210,14 @@ public class Ennemy_PathFinding : MonoBehaviour {
 				leftWayPoint = leftHit.transform.gameObject ;
 				//Debug.Log(leftWayPoint) ;
 			}
+			else if(leftHit.transform.gameObject.layer == 9)
+			{
+				nearPlayer = true ;
+			}
 			else
 			{
 				leftWayPoint = null ;
+				nearPlayer = false ;
 			}
 		}
 		else
@@ -186,9 +234,14 @@ public class Ennemy_PathFinding : MonoBehaviour {
 				rightWayPoint = rightHit.transform.gameObject ;
 				//Debug.Log(rightWayPoint) ;
 			}
+			else if(rightHit.transform.gameObject.layer == 9)
+			{
+				nearPlayer = true ;
+			}
 			else 
 			{
 				rightWayPoint = null ;
+				nearPlayer = false ;
 			}
 		}
 		else
