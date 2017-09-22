@@ -6,6 +6,12 @@ public class Ennemy_PathFinding : MonoBehaviour {
 
 	public float movementSpeed = 5 ;
 	public float moveCooldown ;
+
+	public float atackSpeed ;
+	private float currentAttackCd ;
+	public float damage ;
+
+	public Animator animatorComponent ;
 	private float currentMoveCoolDown ;
 
 	private bool haveFindPlayer = false ;
@@ -15,17 +21,19 @@ public class Ennemy_PathFinding : MonoBehaviour {
 	private GameObject backWayPoint ;
 	private GameObject leftWayPoint ;
 	private GameObject rightWayPoint ;
+	private GameObject currentWayPoint ;
 
-	private float tempFrontDistance,tempBackDistance,tempLeftDistance,tempRigthDistance ;
-	public List<float> distanceList = new List<float>() ;
+	private float tempFrontDistance,tempBackDistance,tempLeftDistance,tempRigthDistance,tempCurrentDistance ;
+	private List<float> distanceList = new List<float>() ;
 	private float nearestWp ;
 	private GameObject distanceToGo ;
 
 	private GameObject player ;
 
-	public float raycastRange = 1 ;
+	private float raycastRange = 200 ;
 
 	private bool nearPlayer = false ;
+	private bool canMove = true ;
 	// Use this for initialization
 	void Start () 
 	{	
@@ -47,21 +55,42 @@ public class Ennemy_PathFinding : MonoBehaviour {
 			PathFinding() ;
 		}
 
+		if(currentAttackCd > 0 )
+		{
+			currentAttackCd -= Time.deltaTime ;
+			animatorComponent.SetTrigger("StopAttack") ;
+		}
+		if(currentAttackCd <= 0 && nearPlayer)
+		{
+			animatorComponent.SetTrigger("Attack") ;
+			currentAttackCd = atackSpeed ;
+			transform.LookAt(player.transform) ;
+		}
+
 		/*if(Input.GetKeyDown("f"))
 		{
 			PathFinding() ;
 		}*/
 
-		if(distanceToGo != null && transform.position != distanceToGo.transform.position)
+		if(distanceToGo != null && transform.position != distanceToGo.transform.position && !nearPlayer)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, distanceToGo.transform.position, movementSpeed * Time.deltaTime) ;
+			transform.LookAt(distanceToGo.transform) ;
+			animatorComponent.SetTrigger("Move") ;
+		}
+		else if(transform.position == currentWayPoint.transform.position)
+		{
+			animatorComponent.SetTrigger("StopMove") ;
 		}
 	}
 
 	void PathFinding()
 	{	
+		nearPlayer = false ;
 		CheckNearWaypoint() ;
 		distanceList.Clear() ;
+		tempCurrentDistance = Vector3.Distance(currentWayPoint.transform.position, player.transform.position) ;
+		distanceList.Add(tempCurrentDistance) ;
 		if(frontWayPoint != null)
 		{
 			tempFrontDistance = Vector3.Distance(frontWayPoint.transform.position, player.transform.position) ;
@@ -106,8 +135,7 @@ public class Ennemy_PathFinding : MonoBehaviour {
 
 		Debug.Log("near" + nearestWp) ;
 
-			if(!nearPlayer)
-			{	
+			
 				if(nearestWp == tempRigthDistance && rightWayPoint != null)
 				{
 					if(!rightWayPoint.GetComponent<Waypoint_script>().ReturnIsOcupiedByPlayer())
@@ -120,7 +148,7 @@ public class Ennemy_PathFinding : MonoBehaviour {
 					if(!frontWayPoint.GetComponent<Waypoint_script>().ReturnIsOcupiedByPlayer())
 					{
 						distanceToGo = frontWayPoint ;
-					}	
+					}
 				}
 				if(nearestWp == tempLeftDistance && leftWayPoint!=null)
 				{
@@ -136,12 +164,24 @@ public class Ennemy_PathFinding : MonoBehaviour {
 						distanceToGo = backWayPoint ;
 					}
 				}
-			}
+				if(nearestWp == tempCurrentDistance)
+				{
+					distanceToGo = currentWayPoint ;
+					nearPlayer = true ;
+
+				}
+		}
 		
 
 		//Debug.Log("distance" + distanceToGo) ;	
-	}
 
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.GetComponent<Collider>().transform.gameObject.layer == 8)
+		{
+			currentWayPoint = other.gameObject ;
+		}
+	}
 
 	void CheckNearWaypoint()
 	{
@@ -158,17 +198,12 @@ public class Ennemy_PathFinding : MonoBehaviour {
 			{
 				//Debug.Log("Hit") ;
 				frontWayPoint = frontHit.transform.gameObject ;
-				nearPlayer = false ;
 				//Debug.Log(frontWayPoint) ;
-			}
-			else if(frontHit.transform.gameObject.layer == 9)
-			{
-				nearPlayer = true ;
 			}
 			else
 			{
 				frontWayPoint = null ;
-				nearPlayer = false ;
+
 			}
 		}
 		else
@@ -186,14 +221,10 @@ public class Ennemy_PathFinding : MonoBehaviour {
 				nearPlayer = false ;
 				//Debug.Log(backWayPoint) ;
 			}
-			else if(backHit.transform.gameObject.layer == 9)
-			{
-				nearPlayer = true ;
-			}
 			else
 			{
 				backWayPoint = null ;
-				nearPlayer = false ;
+
 			}
 		}
 		else
@@ -210,14 +241,9 @@ public class Ennemy_PathFinding : MonoBehaviour {
 				leftWayPoint = leftHit.transform.gameObject ;
 				//Debug.Log(leftWayPoint) ;
 			}
-			else if(leftHit.transform.gameObject.layer == 9)
-			{
-				nearPlayer = true ;
-			}
 			else
 			{
 				leftWayPoint = null ;
-				nearPlayer = false ;
 			}
 		}
 		else
@@ -234,14 +260,9 @@ public class Ennemy_PathFinding : MonoBehaviour {
 				rightWayPoint = rightHit.transform.gameObject ;
 				//Debug.Log(rightWayPoint) ;
 			}
-			else if(rightHit.transform.gameObject.layer == 9)
-			{
-				nearPlayer = true ;
-			}
 			else 
 			{
 				rightWayPoint = null ;
-				nearPlayer = false ;
 			}
 		}
 		else
