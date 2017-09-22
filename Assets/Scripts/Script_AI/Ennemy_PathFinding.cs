@@ -64,6 +64,7 @@ public class Ennemy_PathFinding : MonoBehaviour {
 		{
 			animatorComponent.SetTrigger("Attack") ;
 			DoDamage() ;
+			GetComponent<AudioSource>().Play();
 			currentAttackCd = atackSpeed ;
 			transform.LookAt(player.transform) ;
 		}
