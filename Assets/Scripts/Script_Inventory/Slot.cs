@@ -17,6 +17,7 @@ public class Slot : MonoBehaviour, IDropHandler {
 	{
 		if(!item)
 		{		
+			GetComponent<AudioSource>().Play();
 			DragAndDrop.itemBeingDragged.transform.SetParent (transform) ;
 			//ExecuteEvents.ExecuteHierarchy<IHaveChanged>(gameObject, null, (x,y) => x.HasChanged ());
 		}
