@@ -48,7 +48,8 @@ public class Wilfried_Moves : MonoBehaviour {
 		destination = transform.position ;
 		qTo = transform.rotation ;
 		currentRotation = transform.rotation.eulerAngles.y ;
-		Debug.Log(currentRotation) ;
+		SetRespawn();
+
 	}
 	
 	// Update is called once per frame
