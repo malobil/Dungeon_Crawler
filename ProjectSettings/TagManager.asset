@@ -8,7 +8,7 @@ TagManager:
   - Test boutton
   - Coffre
   - Portesimple
-  - Enemy
+  - Ennemis
   layers:
   - Default
   - TransparentFX
@@ -21,7 +21,7 @@ TagManager:
   - WaypointLayer
   - PlayerLayer
   - TrapWayPointLayer
-  - 
+  - EnnemisLayer
   - 
   - 
   - 

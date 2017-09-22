@@ -11,7 +11,7 @@ public class Wilfried_HP : MonoBehaviour {
     public float wilfried_min_HP;
     public float damages_to_wilfried;
     public float heal_wilfried;
-    public Text hp;
+    //public Text hp;
     public GameObject inventory;
 
     public bool isGemmeEquiped = false;
@@ -29,9 +29,10 @@ public class Wilfried_HP : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        hp.text = wilfried_current_HP.ToString() + "/" + wilfried_max_HP.ToString();
+       // hp.text = wilfried_current_HP.ToString() + "/" + wilfried_max_HP.ToString();
         if (Input.GetKeyDown("m") & wilfried_current_HP > wilfried_min_HP)
         {   //Lorsque joueur appuie sur la touche "m", il perd 10HP
+        	GetComponent<AudioSource>().Play();
             wilfried_current_HP = wilfried_current_HP - damages_to_wilfried;
             LifeManager();
         }

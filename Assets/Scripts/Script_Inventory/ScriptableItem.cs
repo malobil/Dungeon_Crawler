@@ -10,4 +10,5 @@ public class ScriptableItem : ScriptableObject
 	public float atkBoost,hPBoost, healGain ;
 	public bool isGemRafined ;
 	public AudioClip lootSound;
+	public GameObject itemPrefab;
 }

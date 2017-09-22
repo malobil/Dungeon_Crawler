@@ -25,7 +25,9 @@ public class PortesimpleManager : MonoBehaviour
 	}
 
 	public void SetClosed (){
+		
 		isOpen = false;
 		myDoorAnimator.ResetTrigger("CloseDoor");
+		
 	}
 }

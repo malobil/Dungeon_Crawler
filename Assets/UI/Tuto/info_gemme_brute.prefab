@@ -104,9 +104,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Visez la cible puis tirez pour activer un m\xE9canisme.Vous avez trouv\xE9
-    une gemme brute ! Ouvrez votre inventaire et placez la dans l\u2019emplacement
-    d\xE9sign\xE9 pour profiter de ses bonus "
+  m_Text: "Vous avez trouv\xE9 une gemme brute ! Ouvrez votre inventaire et placez
+    la dans l\u2019emplacement d\xE9sign\xE9 pour profiter de ses bonus "
 --- !u!222 &222399465483658792
 CanvasRenderer:
   m_ObjectHideFlags: 1

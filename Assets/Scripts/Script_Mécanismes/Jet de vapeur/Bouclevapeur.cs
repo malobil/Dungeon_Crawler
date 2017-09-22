@@ -61,7 +61,13 @@ public class Bouclevapeur : MonoBehaviour {
 	}
 	void OnParticleCollision(GameObject wilfred)
 		{
-			wilfred.GetComponent<Wilfried_Moves>().TakeOnTimeDamage(12) ;
+			Debug.Log("Dio");
+//			Rigidbody body = wilfred.GetComponent<Rigidbody>();
+//			if (body)
+//			{
+			wilfred.GetComponent<Wilfried_Moves>().TakeInstantDamage(12) ;				
+//			}
+
 		}
 }
 

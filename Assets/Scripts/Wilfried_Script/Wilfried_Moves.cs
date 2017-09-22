@@ -97,10 +97,10 @@ public class Wilfried_Moves : MonoBehaviour {
 	void FixedUpdate()
 	{	
 		//Debug//
-		/*Debug.DrawRay(transform.position,Vector3.forward * raycastRange,Color.green) ;
+		Debug.DrawRay(transform.position,Vector3.forward * raycastRange,Color.green) ;
 		Debug.DrawRay(transform.position,Vector3.back * raycastRange,Color.green) ;
 		Debug.DrawRay(transform.position,Vector3.left * raycastRange,Color.green) ;
-		Debug.DrawRay(transform.position,Vector3.right * raycastRange,Color.green) ;*/
+		Debug.DrawRay(transform.position,Vector3.right * raycastRange,Color.green) ;
 
 		// Variable that stock object hit //
 		RaycastHit frontHit ;
@@ -117,7 +117,7 @@ public class Wilfried_Moves : MonoBehaviour {
 			//Debug.Log(frontHit.transform.gameObject.layer) ;
 			if(frontHit.transform.gameObject.layer == 8)
 			{
-				//Debug.Log("Hit") ;
+				// Debug.Log(frontHit.collider.transform.gameObject.name) ;
 				frontWayPoint = frontHit.transform.position ;
 				haveFrontPoint = true ;
 				//Debug.Log(frontWayPoint) ;
@@ -283,6 +283,7 @@ public class Wilfried_Moves : MonoBehaviour {
 
 	public void TakeInstantDamage(float damage)
 	{
+		GetComponent<AudioSource>().Play();
 		currentHP -= damage ;
 
 		if(hpBar != null)

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PorteManager : MonoBehaviour 
 {
-public void ToggleOuverturePorte () 
+	public Animator myLittleDoorPoney;
+
+	public void OuverturePorte () 
 		{
-			GetComponent<Animator>().SetTrigger("OpenDoor");
+			myLittleDoorPoney.SetTrigger("OpenDoor");
 		}
+	
 }

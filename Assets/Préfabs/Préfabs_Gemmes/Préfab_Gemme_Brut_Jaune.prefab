@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33997198193508508}
   - component: {fileID: 23478347027268596}
   - component: {fileID: 95028084723106486}
+  - component: {fileID: 114827294644011478}
+  - component: {fileID: 65022839167116736}
   m_Layer: 0
   m_Name: "Pr\xE9fab_Gemme_Brut_Jaune"
   m_TagString: Untagged
@@ -113,6 +115,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1030191140084012}
   m_Mesh: {fileID: 4300000, guid: d6dc0ad2eb92b87408c4ed608d1e4804, type: 3}
+--- !u!65 &65022839167116736
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030191140084012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.51743835, y: 0.59748644, z: 0.46904194}
+  m_Center: {x: -0.0862397, y: 0, z: 0.23452097}
 --- !u!95 &95028084723106486
 Animator:
   serializedVersion: 3
@@ -130,6 +144,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114827294644011478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030191140084012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4fb6fbe380ff042ab8edab8a3c587a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse_Layout: {fileID: 0}
+  item_Name: {fileID: 0}
+  associateScriptable: {fileID: 11400000, guid: dc3122a4d075e734da68f627224af11c,
+    type: 2}
 --- !u!198 &198091829690553100
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -196,7 +225,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.09
+      scalar: 0.8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -237,7 +266,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -341,7 +370,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.03
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -641,7 +670,7 @@ ParticleSystem:
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
-    placementMode: 2
+    placementMode: 1
     m_Mesh: {fileID: 4300000, guid: e481e54f08293d5418750c4d2b5910f0, type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
@@ -749,7 +778,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 755.15
+      scalar: 3700
       minScalar: 10
       maxCurve:
         serializedVersion: 2
