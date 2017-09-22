@@ -10,6 +10,10 @@ public class Tir_Revolver : MonoBehaviour {
 	public Button buttonArme;
 	public ParticleSystem pistolVFX; 
 
+	public float damage = 10f ; 
+	public float range = 100f;
+
+	public Camera wilfredCam ; 
 
 	private float currentCoolDown = 0 ;
 
@@ -40,6 +44,16 @@ public class Tir_Revolver : MonoBehaviour {
 		buttonArme.interactable =false ;
 		GetComponent<AudioSource>().Play();
 		pistolVFX.Play();
+	}
+
+	public void tir ()
+	{
+		RaycastHit hit;
+		if (Physics.Raycast(wilfredCam.transform.position, wilfredCam.transform.forward, out hit, range))
+		{
+			Debug.Log(hit.transform.name);
+		}
+		
 	}
 
 }
