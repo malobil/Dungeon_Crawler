@@ -53,7 +53,12 @@ public class Tir_Revolver : MonoBehaviour {
 			RaycastHit hit;
 			if (Physics.Raycast(wilfredCam.transform.position, wilfredCam.transform.forward, out hit, range, ennemy.value))
 			{
+				TargetDamage target =hit.transform.GetComponent<TargetDamage>();
 				Debug.Log(hit.transform.name);
+				if (target != null)
+				{
+					target.TakeDamage(damage);
+				}
 			}
 		
 		
