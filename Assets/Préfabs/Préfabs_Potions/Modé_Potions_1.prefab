@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4222961967030696}
   - component: {fileID: 198648264423506506}
   - component: {fileID: 199849656301474712}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VFX_Surbrillance_Potion_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 95377113904519004}
   - component: {fileID: 114170721349999372}
   - component: {fileID: 65662715604238704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "Mod\xE9_Potions_1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

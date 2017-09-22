@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95542178314869378}
   - component: {fileID: 114177879854633868}
   - component: {fileID: 65902952597305984}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "Pr\xE9fab_Gemme_Raffin\xE9e"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4800207928798092}
   - component: {fileID: 198624079018367498}
   - component: {fileID: 199673724824137944}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VFX_Surbrillance_Gemme_Raffine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

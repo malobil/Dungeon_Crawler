@@ -59,9 +59,24 @@ public class Tir_Revolver : MonoBehaviour {
 				{
 					target.TakeDamage(damage);
 				}
+
+				
 			}
-		
-		
+			if (Physics.Raycast(wilfredCam.transform.position, wilfredCam.transform.forward, out hit, range))
+			{
+			
+			
+				if (hit.collider.tag == "Test boutton"){
+				
+			   		hit.collider.GetComponent<PorteManager>().OuverturePorte();
+				
+			   	}
+			
+			}
+			
 	}
 
-}
+}	
+		
+
+

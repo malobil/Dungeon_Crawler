@@ -119,14 +119,20 @@ public class InventoryManagerK : MonoBehaviour {
         }
         item_Info_Window.SetActive(true);
         item_Info_Window.transform.position = Input.mousePosition + new Vector3(50, 40, 0);
+        
         vfxRay = receive_Hit.transform.GetChild(0).gameObject;
-        vfxRay.SetActive(true);
+       	 vfxRay.SetActive(true);
     }
 
     void Close_Description_Window()
     {
+    	if(vfxRay != null)
+        {
+        	
         item_Info_Window.SetActive(false);
         vfxRay.SetActive(false);
+
+       	}
     }
 
 	void AddObjectToInventory(RaycastHit hitObject)

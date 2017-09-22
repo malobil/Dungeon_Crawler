@@ -11,6 +11,9 @@ public class Canne_Epee : MonoBehaviour {
     public Button buttonCanne;
     public float range;
     Raycast hit;
+    public LayerMask ennemy;
+    public GameObject wilfredCam;
+    public float damage;
 
     private float currentCoolDown = 0;
 
@@ -43,12 +46,16 @@ public class Canne_Epee : MonoBehaviour {
         buttonCanne.interactable = false;
         GetComponent<AudioSource>().Play();
 
-        //Debug.DrawRay(transform.position, Vector3.forward * range, Color.green);
-        //if (Physics.Raycast(transform.position, transform.forward, out hit, range) && hit.transform.CompareTag == "Enemy")
-        //{
-       // Debug.Log("testdebug");
-
-       // }
+        RaycastHit hit;
+        if (Physics.Raycast(wilfredCam.transform.position, wilfredCam.transform.forward, out hit, range, ennemy))
+        {
+            TargetDamage target = hit.transform.GetComponent<TargetDamage>();
+            Debug.Log(hit.transform.name);
+            if (target != null)
+            {
+                target.TakeDamage(damage);
+            }
+        }
     }
 
 }
